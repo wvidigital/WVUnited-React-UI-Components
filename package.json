@@ -1,14 +1,21 @@
 {
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@storybook/addon-actions": "^4.1.11",
+    "@storybook/addon-links": "^4.1.11",
+    "@storybook/addon-notes": "^4.1.11",
+    "@storybook/addons": "^4.1.11",
     "@storybook/react": "^4.1.11",
+    "@storybook/storybook-deployer": "^2.8.1",
     "babel-loader": "^8.0.5"
   },
   "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "styled-components": "^4.1.3"
   }
 }
