@@ -13,6 +13,6 @@ To set up your local environment and begin developing for this project:
 
 To deploy the updated storybook on Github pages:
 * Run ```npm run deploy-storybook``` in the root folder
-* Open [https://wvidigital.github.io/WVUnited-React-UI-Components](https://:wvidigital.github.io/WVUnited-React-UI-Components) 
+* Open [https://wvidigital.github.io/WVUnited-React-UI-Components](https://wvidigital.github.io/WVUnited-React-UI-Components) 
 
 
