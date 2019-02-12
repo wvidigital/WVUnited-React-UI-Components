@@ -1,0 +1,28 @@
+
+@import url("//fast.fonts.net/t/1.css?apiType=css&projectid=02767c42-8580-4146-9f37-8d47ab0250b5");
+
+@font-face{
+  font-family:"Gill Sans W04 Light";
+  src:url("fonts/99f44245-9d58-4190-a64e-a3376f8b53b3.eot?#iefix");
+  src:url("fonts/99f44245-9d58-4190-a64e-a3376f8b53b3.eot?#iefix") format("eot"),url("fonts/3054685f-9d62-4022-a91b-c967a77f0399.woff2") format("woff2"),url("fonts/bef137ae-8972-46a3-9a77-f0453736e755.woff") format("woff"),url("fonts/c4072f74-697b-4348-a99d-a43bc92d5416.ttf") format("truetype"),url("fonts/2f1959a9-36af-4490-bdb5-aec3ca90bbb2.svg#2f1959a9-36af-4490-bdb5-aec3ca90bbb2") format("svg");
+}
+@font-face{
+  font-family:"Gill Sans W04 Book";
+  src:url("fonts/c4be5717-c19c-43a5-9ad3-b548ddf070d4.eot?#iefix");
+  src:url("fonts/c4be5717-c19c-43a5-9ad3-b548ddf070d4.eot?#iefix") format("eot"),url("fonts/4bfd13a9-3195-4d8f-87a9-83a212d18b16.woff2") format("woff2"),url("fonts/63aa9f40-04be-453a-a672-aa8f9919115d.woff") format("woff"),url("fonts/a82a5fb6-ad03-4675-801e-d3182a58ff5f.ttf") format("truetype"),url("fonts/beb2cee2-1a51-44ca-848f-4f795394ee5a.svg#beb2cee2-1a51-44ca-848f-4f795394ee5a") format("svg");
+}
+@font-face{
+  font-family:"Gill Sans W04 Roman";
+  src:url("fonts/c575cf0c-7e15-4f49-913a-af4676e20343.eot?#iefix");
+  src:url("fonts/c575cf0c-7e15-4f49-913a-af4676e20343.eot?#iefix") format("eot"),url("fonts/a5dcf2a7-92c3-402b-8233-9da23c2af1c1.woff2") format("woff2"),url("fonts/39ede25d-544d-4537-8668-3e9af68a26ec.woff") format("woff"),url("fonts/fe7e264f-3a4a-40c8-85eb-f9e2cb4b6f21.ttf") format("truetype"),url("fonts/f45aa0ef-7101-4ac6-84f9-fce14d01e189.svg#f45aa0ef-7101-4ac6-84f9-fce14d01e189") format("svg");
+}
+@font-face{
+  font-family:"Gill Sans W04 Bold";
+  src:url("fonts/e55f9afb-8c92-4a61-ad1a-7f5788bd9c1d.eot?#iefix");
+  src:url("fonts/e55f9afb-8c92-4a61-ad1a-7f5788bd9c1d.eot?#iefix") format("eot"),url("fonts/5402bd17-7535-47d2-a0a8-b50dc226348c.woff2") format("woff2"),url("fonts/1063b047-48b7-4f7c-876b-f93d4ab62b2c.woff") format("woff"),url("fonts/382d3153-8f7f-4011-9915-0c65e8af150a.ttf") format("truetype"),url("fonts/f80f42c9-7401-4415-a8d1-575179869201.svg#f80f42c9-7401-4415-a8d1-575179869201") format("svg");
+}
+@font-face{
+  font-family:"SuomiHand W01 Script";
+  src:url("fonts/cd3d4f48-e73d-4676-8ee6-a751690ca900.eot?#iefix");
+  src:url("fonts/cd3d4f48-e73d-4676-8ee6-a751690ca900.eot?#iefix") format("eot"),url("fonts/14c8776e-68f2-4b35-affc-d26398bee77b.woff2") format("woff2"),url("fonts/27743940-9696-4a08-8e5b-3d90e281835b.woff") format("woff"),url("fonts/c20c2703-e7c7-49b4-a549-82478cb7d43e.ttf") format("truetype"),url("fonts/16098c16-03da-4669-b5ff-a5c7d2e7b97f.svg#16098c16-03da-4669-b5ff-a5c7d2e7b97f") format("svg");
+}
