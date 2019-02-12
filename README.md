@@ -12,5 +12,7 @@ To set up your local environment and begin developing for this project:
 * Open [http://localhost:9001](http://localhost:9001) in your browser
 
 To deploy the updated storybook on Github pages:
+* Run ```npm run deploy-storybook``` in the root folder
+* Open [https://wvidigital.github.io/WVUnited-React-UI-Components](https://:wvidigital.github.io/WVUnited-React-UI-Components) 
 
-```npm run deploy-storybook```
+
