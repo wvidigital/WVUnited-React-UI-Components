@@ -1,8 +1,10 @@
 import { configure, addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import {withKnobs} from "@storybook/addon-knobs";
 
-// Does not seem to work globally.
+// Global decorators for info and props addons.
 addDecorator(withInfo);
+addDecorator(withKnobs);
 
 function loadStories() {
   require('../stories/index.js');

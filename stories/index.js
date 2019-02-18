@@ -25,12 +25,6 @@ const storiesText = storiesOf('Texts', module);
 const storiesButton = storiesOf('Links and buttons', module);
 const storiesIcon = storiesOf('Icons and images', module);
 const storiesGrid = storiesOf('Grid', module);
-// Add the `withKnobs` decorator to add knobs support to your stories.
-// You can also configure `withKnobs` as a global decorator.
-storiesText.addDecorator(withKnobs);
-storiesButton.addDecorator(withKnobs);
-storiesIcon.addDecorator(withKnobs);
-storiesGrid.addDecorator(withKnobs);
 
 
 // Backgrounds decorator.
