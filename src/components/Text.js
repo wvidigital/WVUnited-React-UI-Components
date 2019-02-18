@@ -6,11 +6,11 @@ export default function Text(props) {
 
   // Create a Text component that will render a <p> element with styles.
   const Text = styled.p`
-  /* Adapt the colors based on primary prop */  
+  margin: 0 0 8px;
   background: ${props.background};
   color: ${props.color};
-  font-family: 'Lato', sans-serif;
-  font-size: 20px;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 16px;
   font-weight: 300;
 `;
 
@@ -20,7 +20,7 @@ export default function Text(props) {
 }
 
 Text.defaultProps = {
-  background: '',
+  background: 'white',
   color: '#333',
 };
 

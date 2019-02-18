@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 // Need to add this to properly load the fonts.
-import fonts from '../fonts/gill-sans-suomi-hand-script/style.css';
+import fonts from '../../fonts/gill-sans-suomi-hand-script/style.css';
 
 // Render the proper HTML tag depending on the props.
 function renderHeading(props) {
@@ -37,6 +37,7 @@ export default function Heading(props) {
     font-size: 24px;
     line-height: 1.2;
     text-align: center;
+    margin-bottom: 12px;
   }
   
   h1 {
