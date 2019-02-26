@@ -4,14 +4,14 @@ import { storiesOf } from '@storybook/react';
 // Addons.
 
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import { text, boolean, number } from '@storybook/addon-knobs';
 
 // Used for grid and mwv post icons only.
 import { withBackgrounds } from '@storybook/addon-backgrounds';
 
 // Components.
-import Text from '../src/components/Text';
-import Heading from '../src/components/Heading';
+import Text from '../src/components/Text/index';
+import Heading from '../src/components/Heading/index';
 import ActionButton from '../src/components/ActionButton';
 import LinkButton from '../src/components/LinkButton';
 import TextLink from '../src/components/TextLink';
@@ -20,10 +20,25 @@ import Image from '../src/components/Image';
 import ItemBox from "../src/components/ItemBox";
 import Grid from "../src/components/Grid";
 
+import FieldSelect from '../src/components/FieldSelect/index';
+import {storiesFormFields} from '../src/components/FieldSelect/stories';
+
+import {
+  copyButton,
+  titleCopyButton,
+  imageCopyButton,
+  childInfoCopy,
+  itemsFeed,
+  itemsSlickFeed,
+  itemsChildfinder,
+  itemsChildfinderResults,
+} from "./data";
+
 
 const storiesText = storiesOf('Texts', module);
 const storiesButton = storiesOf('Links and buttons', module);
 const storiesIcon = storiesOf('Icons and images', module);
+// const storiesFormFields = storiesOf('Form fields', module);
 const storiesGrid = storiesOf('Grid', module);
 
 
@@ -32,11 +47,20 @@ const backgrounds = withBackgrounds([
     { name: 'mwv grey' , value: '#efefef', default: true },
     { name: 'mwv orange', value: '#ff6600' },
     { name: 'mwv blue', value: '#00acca' },
+    { name: 'child finder' , value: '#CAC4BB'},
     { name: 'twitter', value: '#00aced' },
     { name: 'facebook', value: '#3b5998' },
   ]);
-storiesGrid.addDecorator(backgrounds);
+const backgroundChildfinderGrid = withBackgrounds([
+  { name: 'child finder' , value: '#CAC4BB', default: true },
+  { name: 'mwv grey' , value: '#efefef' },
+  { name: 'mwv orange', value: '#ff6600' },
+  { name: 'mwv blue', value: '#00acca' },
+  { name: 'twitter', value: '#00aced' },
+  { name: 'facebook', value: '#3b5998' },
+]);
 storiesIcon.addDecorator(backgrounds);
+storiesGrid.addDecorator(backgroundChildfinderGrid);
 
 
 storiesText
@@ -75,7 +99,7 @@ storiesButton
   .add('Action button', () => (
     <ActionButton
       text={'Action button'}
-      action={action('clicked')}
+      action={action('REQUEST_DATA')}
     />
   ));
 
@@ -115,6 +139,15 @@ storiesIcon
       border={boolean('Border', true)}
     />
   ))
+  .add('Slider arrow icon', () => (
+    <Icon
+      type={text('Type', 'arrow-left')}
+      size={number('Size', 3)}
+      background={text('Background color', 'transparent')}
+      color={text('Color', '#fff')}
+      border={boolean('Border', true)}
+    />
+  ))
   .add('Image', () => (
     <Image
       source={text('Source url', 'http://placekitten.com/400/400')}
@@ -123,6 +156,8 @@ storiesIcon
       title={text('Title', 'Pretty awesome kitten')}
     />
   ));
+
+storiesFormFields;
 
 storiesOf('Complex components (Items)', module)
   .add('Item box with copy and button', () => (
@@ -142,6 +177,18 @@ storiesOf('Complex components (Items)', module)
 storiesGrid
   .add('Grid row', () => (
     <Grid items={itemsFeed} direction={text('Direction', 'row')} />
+  ))
+  .add('Grid row with slick slider', () => (
+    <Grid items={itemsSlickFeed} direction={text('Direction', 'row')} isSlider={true} />
+  ))
+  .add('Grid row with slick slider (4 items)', () => (
+    <Grid items={itemsFeed} direction={text('Direction', 'row')} isSlider={true} />
+  ))
+  .add('Child finder', () => (
+    <Grid items={itemsChildfinder} direction={text('Direction', 'row')} isSlider={true} />
+  ))
+  .add('Child finder with results', () => (
+    <Grid items={itemsChildfinderResults} direction={text('Direction', 'row')} isSlider={true} />
   ));
 
 storiesOf('Information', module)
@@ -151,76 +198,3 @@ storiesOf('Information', module)
     </div>
   ));
 
-
-// Define some dummy JSON which will be later requested from the API.
-
-// Child data for component-
-// image, name, additional infos, button.
-// This will all come dynamically from the API.
-
-const copyButton = {
-  description: 'Soufflé caramels muffin cake dragée muffin. Cookie fruitcake cake macaroon. Pastry tiramisu lemon drops cotton candy brownie brownie. Chupa chups brownie macaroon soufflé toffee cake chocolate cake.',
-  button: {
-    text: 'Click here',
-    link: '#',
-  }
-};
-
-const titleCopyButton = {
-  title: 'Choose a child for me',
-  description: 'Pastry dessert dessert bear claw sugar plum gummi bears pudding. Pie brownie donut. Marzipan jujubes gingerbread donut cupcake chocolate bar gummi bears. Cupcake ice cream tootsie roll sweet.',
-  button: {
-    text: 'Click here',
-    link: '#',
-  }
-};
-
-const imageCopyButton = {
-  image: {
-    source: 'http://placekitten.com/400/400',
-    link: 'http://placekitten.com/400/400',
-    alt: 'Maggie Smith',
-    title: 'Maggie Smith'
-  },
-  title: 'Choose a child for me',
-  description: 'Bear claw halvah fruitcake icing. Apple pie croissant candy bonbon sweet roll.',
-  button: {
-    text: 'Click here',
-    link: '#',
-  }
-};
-
-const childInfoCopy = {
-  image: {
-    source: 'http://placekitten.com/400/400',
-    link: 'http://placekitten.com/400/400',
-    alt: 'Maggie Smith',
-    title: 'Maggie Smith'
-  },
-  title: 'Maggie Smith - 12.06.1990',
-  icons: [
-    {
-      type: 'birthday',
-      label: '12.06.1990'
-    },
-    {
-      type: 'countries',
-      label: 'Bolivien'
-    },
-    {
-      type: 'gender',
-      label: 'Girl'
-    }
-  ],
-  button: {
-    text: 'Sponsor Maggie',
-    link: '#',
-  }
-};
-
-const itemsFeed = [
-  copyButton,
-  titleCopyButton,
-  imageCopyButton,
-  childInfoCopy,
-];

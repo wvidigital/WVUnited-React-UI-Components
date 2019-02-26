@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Heading from './Heading';
+import Heading from './Heading/index';
 import LinkButton from "./LinkButton";
 import Icon from "./Icon";
 import Image from "./Image";
-import Text from "./Text";
+import Text from "./Text/index";
+import FieldSelect from "./FieldSelect";
 
 
 function renderImage(image) {
@@ -70,17 +71,53 @@ function renderIcons(icons) {
 }
 
 
+function renderFormFields(fields) {
+  if (fields !== undefined) {
+    return (
+      <div className='form-fields'>
+        { renderFormField(fields) }
+      </div>
+    )
+  }
+}
+
+function renderFormField(field) {
+  equalHeights();
+  return field.map((props) =>
+    <FieldSelect key={props.name} {...props} />
+  );
+}
+
+function equalHeights() {
+
+  let maxHeight = 0;
+  let cards = document.getElementsByClassName('item-box-content');
+
+  //only do this on desktop screens
+  if (window.innerWidth >= 1024) {
+    for (let card in cards) {
+        let offsetHeight = card.clientHeight;
+        if (offsetHeight > maxHeight) {
+          maxHeight = offsetHeight;
+        }
+    }
+  }
+}
+
+
 export default function ItemBox(props) {
   const ItemBox = styled.div`  
     // max-width: 460px;
     max-width: 320px;
+    padding: 20px;
+    margin: 0 10px 20px;
+    
     border: 1px solid #d1d1d1;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border-top: 4px solid ${props.borderColor};
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
     
-    padding: 20px;
-    margin: 0 10px 20px;
     text-align: center;
     box-sizing: border-box;
     
@@ -117,6 +154,24 @@ export default function ItemBox(props) {
         margin-top: 0;
       }
     }
+    
+    .form-fields {
+      width: 100%;
+      padding: 20px 0;
+      text-align: left;
+      
+      
+      .form__item {
+        width: 100%;
+        margin-bottom: 22px;
+        
+        input,
+        select {
+          width: 100%;
+        }
+      }
+      
+    }
 `;
 
   return  (
@@ -125,6 +180,7 @@ export default function ItemBox(props) {
       {renderTitle(props.data.title)}
       {renderDescription(props.data.description)}
       {renderInfoIcons(props.data.icons)}
+      {renderFormFields(props.data.form_fields)}
       {renderLinkButton(props.data.button)}
     </ItemBox>
   );

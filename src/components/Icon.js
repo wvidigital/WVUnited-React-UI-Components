@@ -125,6 +125,18 @@ export default function Icon(props) {
     &-volume:before {content: 'j';}
 
     &-childid:before {content: 'u';}
+    &-arrow-left:before {content: 'v';}
+    &-arrow-right:before {content: 'w';}
+    
+    // Position adjustment for arrows.
+    &-arrow-left:before,
+    &-arrow-right:before {
+      position: relative;
+      left: -4px;
+    }
+    &-arrow-right:before {
+      left: 4px;
+    }
     
   }
   
