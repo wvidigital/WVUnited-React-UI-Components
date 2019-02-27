@@ -67,7 +67,8 @@ export default function Grid(props) {
 
   // Create a Grid component that will render a <p> element with styles.
   const Grid = styled.div`
-  display: flex;
+  
+  display: ${(props.isSlider)} ? 'flex' : 'block';
   flex-direction: ${props.direction};
   flex-wrap: wrap;
   
@@ -104,11 +105,11 @@ export default function Grid(props) {
   }
   
   .slick-prev {
-    left: -60px;
+    left: 60px;
   }
   
   .slick-next {
-    right: -60px;
+    right: 60px;
   }
 `;
 
