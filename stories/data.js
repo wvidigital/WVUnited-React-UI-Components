@@ -243,8 +243,8 @@ export const itemsChildfinderResults = [
 function handleFieldChange(name, value) {
   console.log('handle field change', name, value);
 }
-function handleFieldVisibility() {
-  console.log('handle field visibility');
+function handleFieldVisibility(name, value) {
+  console.log('handle field visibility', name, value);
 }
 
 

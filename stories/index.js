@@ -20,7 +20,7 @@ import Image from '../src/components/Image';
 import ItemBox from "../src/components/ItemBox";
 import Grid from "../src/components/Grid";
 
-import FieldSelect from '../src/components/FieldSelect/index';
+import {storiesText} from '../src/components/Text/stories';
 import {storiesFormFields} from '../src/components/FieldSelect/stories';
 
 import {
@@ -28,6 +28,7 @@ import {
   titleCopyButton,
   imageCopyButton,
   childInfoCopy,
+  childFinderCopy,
   itemsFeed,
   itemsSlickFeed,
   itemsChildfinder,
@@ -35,10 +36,8 @@ import {
 } from "./data";
 
 
-const storiesText = storiesOf('Texts', module);
 const storiesButton = storiesOf('Links and buttons', module);
 const storiesIcon = storiesOf('Icons and images', module);
-// const storiesFormFields = storiesOf('Form fields', module);
 const storiesGrid = storiesOf('Grid', module);
 
 
@@ -63,25 +62,9 @@ storiesIcon.addDecorator(backgrounds);
 storiesGrid.addDecorator(backgroundChildfinderGrid);
 
 
-storiesText
-  .add('Simple paragraph', () => (
-    <Text>Hello, this is my simple paragraph.</Text>
-  ))
-  .add('Simple paragraph with optional colors', () => (
-    <Text
-      background={text('Background color', '#ff6600')}
-      color={text('Color', '#fff')}>
-      Hello, this is my simple paragraph.
-    </Text>
-  ))
-  .add('Heading', () => (
-    <Heading
-      size={number('Size', 1)}
-      background={text('Background color', '')}
-      color={text('Color', '#ff6600')}>
-      Hello, this is my heading.
-    </Heading>
-  ));
+storiesText;
+
+storiesFormFields;
 
 storiesButton
   .add('Text link', () => (
@@ -157,7 +140,6 @@ storiesIcon
     />
   ));
 
-storiesFormFields;
 
 storiesOf('Complex components (Items)', module)
   .add('Item box with copy and button', () => (
@@ -171,6 +153,9 @@ storiesOf('Complex components (Items)', module)
   ))
   .add('Item box with child information', () => (
     <ItemBox data={childInfoCopy} />
+  ))
+  .add('Item box with child finder form', () => (
+    <ItemBox data={childFinderCopy} />
   ));
 
 

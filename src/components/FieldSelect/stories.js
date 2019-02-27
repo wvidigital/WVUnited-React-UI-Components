@@ -4,7 +4,7 @@ import React from "react";
 import {selectFieldErrorProps, selectFieldProps} from "../../../stories/data";
 import FieldSelect from "./FieldSelect";
 
-const storiesFormFields = storiesOf('Form fields', module);
+export const storiesFormFields = storiesOf('Form fields', module);
 
 storiesFormFields
   .add('Select', () => (
