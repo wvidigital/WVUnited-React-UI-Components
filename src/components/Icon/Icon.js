@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 // Need to add this to properly load the fonts.
-import iconStyles from '../../fonts/mwv_icons/style.css';
+import iconStyles from '../../../fonts/mwv_icons/style.css';
 
 
 function iconSize(props) {
@@ -34,6 +34,8 @@ export default function Icon(props) {
     flex-direction: ${(props.text && props.inline) ? 'row' : 'column'};
     align-items: center;
     justify-content: center;
+    
+    
   
   .mwv-icon-label {
     font-family: 'Lato', Arial, sans-serif;

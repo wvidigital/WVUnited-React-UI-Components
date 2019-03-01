@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-export default function LinkButton(props) {
+export default function ActionButton(props) {
 
   // Create a Text component that will render a <p> element with styles.
-  const LinkButton = styled.a`
+  const Button = styled.button`
   display: inline-block;
   padding: 10px 30px 12px;
   margin-top: 20px;
@@ -14,7 +14,7 @@ export default function LinkButton(props) {
   color: ${props.color};
 
   transition: all .3s ease;
-  border: 1px solid ${props.color};
+  border: 1px solid ${props.background};
   border-radius: 5px;
 
   font-family: 'Lato', Arial, sans-serif;
@@ -34,21 +34,23 @@ export default function LinkButton(props) {
       text-decoration: none;
       outline: 0;
     }
-`;
+  `;
 
   return  (
-    <LinkButton href={props.link} title={props.text}>{props.text}</LinkButton>
+    <Button
+      onClick={props.action}
+    >{props.text}</Button>
   );
 }
 
-LinkButton.defaultProps = {
+ActionButton.defaultProps = {
   background: '#ff6600',
   color: '#fff',
 };
 
-LinkButton.propTypes = {
+ActionButton.propTypes = {
   text: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  action: PropTypes.func.isRequired,
   background: PropTypes.string,
   color: PropTypes.string,
 }

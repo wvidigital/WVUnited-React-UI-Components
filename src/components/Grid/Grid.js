@@ -1,12 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import ItemBox from "./ItemBox";
-
 import Slider from "react-slick";
-import Icon from "./Icon";
+
+// Styles for the slick slider.
+import "slick-carousel/slick/slick.css";
+import 'slick-carousel/slick/slick-theme.css';
+
+import Icon from "../Icon";
+import ItemBox from "../ItemBox";
 
 export default function Grid(props) {
+
+  const iconProps = {
+    size: 3,
+    background: 'transparent',
+    color: '#fff',
+    border: true,
+  }
 
   function NextArrow(props) {
     const { className, onClick } = props;
@@ -14,10 +25,7 @@ export default function Grid(props) {
       <div className={className} onClick={onClick}>
         <Icon
           type={'arrow-right'}
-          size={3}
-          background={'transparent'}
-          color={'#fff'}
-          border={true}
+          {...iconProps}
         /></div>
     );
   }
@@ -28,10 +36,7 @@ export default function Grid(props) {
       <div className={className} onClick={onClick}>
         <Icon
           type={'arrow-left'}
-          size={3}
-          background={'transparent'}
-          color={'#fff'}
-          border={true}
+          {...iconProps}
         /></div>
     );
   }
@@ -43,19 +48,20 @@ export default function Grid(props) {
     focusOnSelect: true,
     infinite: true,
     centerMode: true,
-    centerPadding: '20px',
+    centerPadding: '50px',
     initialSlide: 1,
+
 
     nextArrow: <NextArrow/>,
     prevArrow: <PrevArrow/>,
 
     responsive: [{
-      breakpoint: 1064,
+      breakpoint: 1080, // iPhone and Galaxy portrait
       settings: {
         slidesToShow: 2,
       }
     }, {
-      breakpoint: 480,
+      breakpoint: 640, // iPhone 4s
       settings: {
         slidesToShow: 1,
       }
@@ -64,6 +70,8 @@ export default function Grid(props) {
       settings: "unslick" // destroys slick
     }]
   };
+
+  let rightArrowPositionPx = props.width/2 - 44;
 
   // Create a Grid component that will render a <p> element with styles.
   const Grid = styled.div`
@@ -83,33 +91,87 @@ export default function Grid(props) {
   
   // Styles for slick.
   .slick-list {
-    width: 1120px;
-    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: ${props.width}px;
+    // margin: 0 auto;
+    padding: 0 !important;
     
+    .slick-track {
+      left: 50px; // equal to centerPadding setting.
+    }
+    
+    // Do we need to pass the breakpoint as prop?
     @media all and (max-width: 1440px) {
-      width: calc(100% - 120px);
+      width: 100%;
     }
 
-    .item-box-content {
+    .item-box {
       margin: 0 20px 20px;
     }
   }
   
   .slick-prev,
   .slick-next {
-    top: 50%;
+    left: calc(50% - ${props.width/2}px);
+    width: 44px;
+    height: 100%;
+    z-index: 2;
+    
+    color: transparent;
+    outline: none;
+    background: transparent;
+    
+    @media all and (max-width: 1440px) {
+      left: 0;
+    }
   
     &:before {
-      display: none;
+      position: absolute;
+      display: block;
+      width: inherit;
+      height: 100%;
+      opacity: 1;
+      content: '';
+      background-image: linear-gradient(to left, rgba(202,196,187,0), rgba(202,196,187,1));
+    }
+    
+    .mwv-icon {
+      position: relative;
+      top: 50%;
+      margin-top:-30px;
+      
+      
+      @media all and (max-width: 1440px) {
+        display: none;
+      }
+
     }
   }
   
-  .slick-prev {
-    left: 60px;
+  .slick-prev {    
+            
+    .mwv-icon {
+      left: -100px;
+    }
   }
   
   .slick-next {
-    right: 60px;
+  
+    left: calc(50% + ${rightArrowPositionPx}px);
+    
+    @media all and (max-width: 1440px) {
+      left: calc(100% - 44px);
+    }
+    
+    &:before {      
+      background-image: linear-gradient(to right, rgba(202,196,187,0), rgba(202,196,187,1));
+    }
+        
+    .mwv-icon {
+      right: -100px;
+    }
   }
 `;
 
@@ -135,18 +197,21 @@ export default function Grid(props) {
 }
 
 Grid.defaultProps = {
+  isSlider: false,
   direction: 'row',
+  width: '1140',
   background: 'transparent',
   color: '#333',
-  isSlider: false,
+
 };
 
 Grid.propTypes = {
   items: PropTypes.array.isRequired,
+  isSlider: PropTypes.bool,
   direction: PropTypes.string,
+  width: PropTypes.string,
   background: PropTypes.string,
   color: PropTypes.string,
-  isSlider: PropTypes.bool,
 }
 
 

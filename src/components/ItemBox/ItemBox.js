@@ -2,20 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Heading from './Heading/index';
-import LinkButton from "./LinkButton";
-import Icon from "./Icon";
-import Image from "./Image";
-import Text from "./Text/index";
-import FieldSelect from "./FieldSelect";
+import { useState, useEffect } from 'react';
 
+import Heading from '../Heading';
+import LinkButton from "../Button/LinkButton";
+import Icon from "../Icon";
+import Image from "../Image";
+import Text from "../Text";
+import FieldSelect from "../FieldSelect";
+
+function useWindowWidth() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+
+  return width;
+}
 
 function renderImage(image) {
   if (image !== undefined) {
     return (
       <div>
         {(typeof image === 'string') ?
-          <Image source={image}/> :
+          <Image source={image} /> :
           <Image
             source={image.source}
             link={image.link}
@@ -57,6 +72,7 @@ function renderInfoIcons(icons) {
 }
 
 function renderIcons(icons) {
+  const width = useWindowWidth();
   return icons.map((item) =>
     <Icon
       type={item.type}
@@ -64,12 +80,11 @@ function renderIcons(icons) {
       background={'#006662'}
       color={'#fff'}
       size={1}
-      inline={false}
+      inline={(width < 640)}
       key={item.type}
     />
   );
 }
-
 
 function renderFormFields(fields) {
   if (fields !== undefined) {
@@ -106,8 +121,7 @@ function equalHeights() {
 
 
 export default function ItemBox(props) {
-  const ItemBox = styled.div`  
-    // max-width: 460px;
+  const ItemBox = styled.div`
     max-width: 320px;
     padding: 20px;
     margin: 0 10px 20px;
@@ -121,24 +135,51 @@ export default function ItemBox(props) {
     text-align: center;
     box-sizing: border-box;
     
-    background-color: ${props.background};
+    background-color: ${props.background};    
+    
+    // // Check if the first div contains heading
+    // // and remove it's margin-top.
+    // .item-box-content > div:first-of-type {
+    //   h3 {
+    //     margin-top: 0;
+    //   }
+    // }
+    
+    @media all and (max-width: 640px) {
+      max-width: 100%;
+      padding: 0;
+      
+      .item-box-content {
+        padding: 20px;
+      }
+    }
 
     img {
       max-width: 100%;
+      
+      @media all and (max-width: 640px) {
+        width: 100%;
+        margin-bottom: -20px;
+      }
     }
       
     .child-info-icons {
 
-      // Flex is too messy for this,
-      // so we go with safest approach.
       .mwv-icon {
-        display: inline-block;
-        width: 33.33333%;
-        vertical-align: top;
+        justify-content: left;
         text-align: center;
+        margin-bottom: 8px;
         
-        &-content {
-          margin: 0 auto 6px;
+        
+        @media all and (min-width: 640px) {
+          display: inline-block;
+          width: 33.33333%;
+          vertical-align: top;
+          margin-bottom: 0;          
+          
+          &-content {
+            margin: 0 auto 6px;
+          }
         }
       }
     }
@@ -175,13 +216,17 @@ export default function ItemBox(props) {
 `;
 
   return  (
-    <ItemBox className='item-box-content'>
-      {renderImage(props.data.image)}
-      {renderTitle(props.data.title)}
-      {renderDescription(props.data.description)}
-      {renderInfoIcons(props.data.icons)}
-      {renderFormFields(props.data.form_fields)}
-      {renderLinkButton(props.data.button)}
+    <ItemBox className='item-box'>
+      <div className='item-box-image'>
+        {renderImage(props.data.image)}
+      </div>
+      <div className='item-box-content'>
+        {renderTitle(props.data.title)}
+        {renderDescription(props.data.description)}
+        {renderInfoIcons(props.data.icons)}
+        {renderFormFields(props.data.form_fields)}
+        {renderLinkButton(props.data.button)}
+      </div>
     </ItemBox>
   );
 }
