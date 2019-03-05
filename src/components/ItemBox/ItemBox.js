@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { useState, useEffect } from 'react';
-
 import Heading from '../Heading';
 import LinkButton from "../Button/LinkButton";
 import Icon from "../Icon";
@@ -11,117 +9,131 @@ import Image from "../Image";
 import Text from "../Text";
 import FieldSelect from "../FieldSelect";
 
-function useWindowWidth() {
-  const [width, setWidth] = useState(window.innerWidth);
 
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  });
-
-  return width;
-}
-
-function renderImage(image) {
-  if (image !== undefined) {
-    return (
-      <div>
-        {(typeof image === 'string') ?
-          <Image source={image} /> :
-          <Image
-            source={image.source}
-            link={image.link}
-            alt={image.alt}
-            title={image.title}
-          />
-        }
-      </div>
-    )
+export default class ItemBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { width: 0, height: 0 };
+    this.updateDimensions = this.updateDimensions.bind(this);
   }
-}
 
-function renderTitle(title) {
-  if (title !== undefined) {
-    return <Heading size={3}>{title}</Heading>;
+
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
+    this.updateDimensions();
   }
-}
-
-function renderDescription(text) {
-  if (text !== undefined) {
-    return <Text>{text}</Text>;
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
   }
-}
 
-function renderLinkButton(button) {
-  if (button !== undefined) {
-    return <LinkButton text={button.text} link={button.link}/>;
+  updateDimensions() {
+    this.setState({width: window.innerWidth, height: window.innerHeight});
   }
-}
 
-function renderInfoIcons(icons) {
-  if (icons !== undefined) {
-    return (
-      <div className='child-info-icons'>
-        { renderIcons(icons) }
-      </div>
-    )
-  }
-}
-
-function renderIcons(icons) {
-  const width = useWindowWidth();
-  return icons.map((item) =>
-    <Icon
-      type={item.type}
-      text={item.label}
-      background={'#006662'}
-      color={'#fff'}
-      size={1}
-      inline={(width < 640)}
-      key={item.type}
-    />
-  );
-}
-
-function renderFormFields(fields) {
-  if (fields !== undefined) {
-    return (
-      <div className='form-fields'>
-        { renderFormField(fields) }
-      </div>
-    )
-  }
-}
-
-function renderFormField(field) {
-  equalHeights();
-  return field.map((props) =>
-    <FieldSelect key={props.name} {...props} />
-  );
-}
-
-function equalHeights() {
-
-  let maxHeight = 0;
-  let cards = document.getElementsByClassName('item-box-content');
-
-  //only do this on desktop screens
-  if (window.innerWidth >= 1024) {
-    for (let card in cards) {
-        let offsetHeight = card.clientHeight;
-        if (offsetHeight > maxHeight) {
-          maxHeight = offsetHeight;
-        }
+  renderImage() {
+    const image = this.props.data.image;
+    if (image !== undefined) {
+      return (
+        <div>
+          {(typeof image === 'string') ?
+            <Image source={image} /> :
+            <Image
+              source={image.source}
+              link={image.link}
+              alt={image.alt}
+              title={image.title}
+            />
+          }
+        </div>
+      )
     }
   }
-}
+
+  renderTitle() {
+    const title = this.props.data.title;
+    if (title !== undefined) {
+      return <Heading size={3}>{title}</Heading>;
+    }
+  }
+
+  renderDescription() {
+    const text = this.props.data.description;
+    if (text !== undefined) {
+      return <Text>{text}</Text>;
+    }
+  }
+
+  renderLinkButton() {
+    const button = this.props.data.button;
+    if (button !== undefined) {
+      return <LinkButton text={button.text} link={button.link}/>;
+    }
+  }
+
+  renderInfoIcons() {
+    const icons = this.props.data.icons;
+    if (icons !== undefined) {
+      return (
+        <div className='child-info-icons'>
+          { this.renderIcons() }
+        </div>
+      )
+    }
+  }
+
+  renderIcons() {
+    return this.props.data.icons.map((item) =>
+      <Icon
+        type={item.type}
+        text={item.label}
+        background={'#006662'}
+        color={'#fff'}
+        size={1}
+        inline={(this.state.width < 640)}
+        key={item.type}
+      />
+    );
+  }
+
+  renderFormFields() {
+    const fields = this.props.data.form_fields;
+    if (fields !== undefined) {
+      return (
+        <div className='form-fields'>
+          { this.renderFormField() }
+        </div>
+      )
+    }
+  }
+
+  renderFormField() {
+    // equalHeights();
+    return this.props.data.form_fields.map((props) =>
+      <FieldSelect key={props.name} {...props} />
+    );
+  }
+
+  // equalHeights() {
+  //
+  //   let maxHeight = 0;
+  //   let cards = document.getElementsByClassName('item-box-content');
+  //
+  //   //only do this on desktop screens
+  //   if (window.innerWidth >= 1024) {
+  //     for (let card in cards) {
+  //         let offsetHeight = card.clientHeight;
+  //         if (offsetHeight > maxHeight) {
+  //           maxHeight = offsetHeight;
+  //         }
+  //     }
+  //   }
+  // }
 
 
-export default function ItemBox(props) {
-  const ItemBox = styled.div`
+
+
+  render() {
+    const ItemBox = styled.div`
     max-width: 320px;
     padding: 20px;
     margin: 0 10px 20px;
@@ -129,13 +141,13 @@ export default function ItemBox(props) {
     border: 1px solid #d1d1d1;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    border-top: 4px solid ${props.borderColor};
+    border-top: 4px solid ${this.props.borderColor};
     box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
     
     text-align: center;
     box-sizing: border-box;
     
-    background-color: ${props.background};    
+    background-color: ${this.props.background};    
     
     // // Check if the first div contains heading
     // // and remove it's margin-top.
@@ -210,25 +222,25 @@ export default function ItemBox(props) {
         select {
           width: 100%;
         }
-      }
-      
+      }     
     }
-`;
+    `;
 
-  return  (
-    <ItemBox className='item-box'>
-      <div className='item-box-image'>
-        {renderImage(props.data.image)}
-      </div>
-      <div className='item-box-content'>
-        {renderTitle(props.data.title)}
-        {renderDescription(props.data.description)}
-        {renderInfoIcons(props.data.icons)}
-        {renderFormFields(props.data.form_fields)}
-        {renderLinkButton(props.data.button)}
-      </div>
-    </ItemBox>
-  );
+    return (
+      <ItemBox className='item-box'>
+        <div className='item-box-image'>
+          {this.renderImage()}
+        </div>
+        <div className='item-box-content'>
+          {this.renderTitle()}
+          {this.renderDescription()}
+          {this.renderInfoIcons()}
+          {this.renderFormFields()}
+          {this.renderLinkButton()}
+        </div>
+      </ItemBox>
+    );
+  }
 }
 
 ItemBox.defaultProps = {

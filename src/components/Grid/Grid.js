@@ -134,7 +134,7 @@ export default function Grid(props) {
       height: 100%;
       opacity: 1;
       content: '';
-      background-image: linear-gradient(to left, rgba(202,196,187,0), rgba(202,196,187,1));
+      background-image: linear-gradient(to left, transparent, ${props.background} 100%);
     }
     
     .mwv-icon {
@@ -166,7 +166,7 @@ export default function Grid(props) {
     }
     
     &:before {      
-      background-image: linear-gradient(to right, rgba(202,196,187,0), rgba(202,196,187,1));
+      background-image: linear-gradient(to right, transparent, ${props.background} 100%);
     }
         
     .mwv-icon {
@@ -202,7 +202,6 @@ Grid.defaultProps = {
   width: '1140',
   background: 'transparent',
   color: '#333',
-
 };
 
 Grid.propTypes = {
