@@ -1,8 +1,8 @@
 import React from 'react';
-import Icon from "./Icon";
-import Image from "../Image";
-import {boolean, number, text} from "@storybook/addon-knobs";
-import {storiesOf} from "@storybook/react";
+import Icon from './Icon';
+import Image from '../Image';
+import {boolean, number, text} from '@storybook/addon-knobs';
+import {storiesOf} from '@storybook/react';
 
 
 export const storiesIcon = storiesOf('Icons and images', module);

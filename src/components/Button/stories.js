@@ -1,10 +1,10 @@
 import React from 'react';
-import {action} from "@storybook/addon-actions";
-import {storiesOf} from "@storybook/react";
+import {action} from '@storybook/addon-actions';
+import {storiesOf} from '@storybook/react';
 
-import LinkButton from "./LinkButton";
-import TextLink from "./TextLink";
-import ActionButton from "./ActionButton";
+import LinkButton from './LinkButton';
+import TextLink from './TextLink';
+import ActionButton from './ActionButton';
 
 export const storiesButton = storiesOf('Links and buttons', module);
 storiesButton

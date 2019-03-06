@@ -1,8 +1,8 @@
-import {storiesOf} from "@storybook/react";
-import {number, text} from "@storybook/addon-knobs";
-import React from "react";
-import Text from "./Text";
-import Heading from "../Heading";
+import {storiesOf} from '@storybook/react';
+import {number, text} from '@storybook/addon-knobs';
+import React from 'react';
+import Text from './Text';
+import Heading from '../Heading';
 
 export const storiesText = storiesOf('Texts', module);
 storiesText

@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Slider from "react-slick";
+import Slider from 'react-slick';
 
 // Styles for the slick slider.
-import "slick-carousel/slick/slick.css";
+import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import Icon from "../Icon";
-import ItemBox from "../ItemBox";
+import Icon from '../Icon';
+import ItemBox from '../ItemBox';
+
+import {textStyles} from '../../../stories/theme';
 
 export default function Grid(props) {
 
@@ -85,9 +87,7 @@ export default function Grid(props) {
   margin: 0 0 8px;
   background: ${props.background};
   color: ${props.color};
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
+  ${textStyles};
   
   // Styles for slick.
   .slick-list {
@@ -212,5 +212,3 @@ Grid.propTypes = {
   background: PropTypes.string,
   color: PropTypes.string,
 }
-
-

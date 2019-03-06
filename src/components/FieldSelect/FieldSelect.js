@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
+import {errorStyles, textStyles} from '../../../stories/theme';
 
 
 export default function FieldSelect(props) {
@@ -66,32 +68,10 @@ export default function FieldSelect(props) {
   const FieldSelectContainer = styled.div`
     display: inline-block;
     margin-bottom: 0;
-    font-family: Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 16px;
+    ${textStyles};
     font-weight: 400;
     color: #363636;
-    
-    // Move below error styles to a reusable mixin.
-    .form__item__errors {
-      margin-bottom: 2px;
-      color: #ff6b00;
-      font-size: 14px;
-    }
-    
-    &.form__item--has-errors input,
-    &.form__item--has-errors select,
-    &.form__item--has-errors textarea {
-      border-color: #f37020 !important;
-    }
-    
-    &.form__item--required-true .label__text:after {
-      content: "*";
-      display: inline-block;
-      font-size: 16px;
-      margin-left: 2px;
-      margin-right: 2px;
-      color: #ff6b00;
-    }
+    ${errorStyles};
   `;
 
     // Create a FieldSelect component that will render a <p> element with styles.
@@ -100,12 +80,12 @@ export default function FieldSelect(props) {
       height: 44px;
       margin-top: 8px;
       padding: 10px 0 12px;
-      font-family: 'Lato', Arial, sans-serif;
       background: #f1f1f1;
       border-radius: 5px;
       border: 1px solid #d6d6d6;
       box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-      font-size: 16px;
+      ${textStyles};
+      font-weight: 400;
     `;
 
     const errors = renderErrors();
