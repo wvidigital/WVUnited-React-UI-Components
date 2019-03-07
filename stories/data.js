@@ -137,7 +137,7 @@ export const childFinderCopy = {
   ],
   button: {
     text: 'Click here',
-    link: '#',
+    action: () => handleSearch(),
   }
 };
 
@@ -246,5 +246,7 @@ function handleFieldChange(name, value) {
 function handleFieldVisibility(name, value) {
   console.log('handle field visibility', name, value);
 }
-
+function handleSearch() {
+  console.log('handle search');
+}
 

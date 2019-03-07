@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Heading from '../Heading';
 import LinkButton from "../Button/LinkButton";
+import ActionButton from "../Button/ActionButton";
 import Icon from "../Icon";
 import Image from "../Image";
 import Text from "../Text";
@@ -63,10 +64,14 @@ export default class ItemBox extends React.Component {
     }
   }
 
-  renderLinkButton() {
+  renderButton() {
     const button = this.props.data.button;
     if (button !== undefined) {
-      return <LinkButton text={button.text} link={button.link}/>;
+      return (
+        (button.action !== undefined) ?
+          <ActionButton text={button.text} action={button.action}/> :
+          <LinkButton text={button.text} link={button.link}/>
+      );
     }
   }
 
@@ -236,7 +241,7 @@ export default class ItemBox extends React.Component {
           {this.renderDescription()}
           {this.renderInfoIcons()}
           {this.renderFormFields()}
-          {this.renderLinkButton()}
+          {this.renderButton()}
         </div>
       </ItemBox>
     );
