@@ -1,6 +1,6 @@
 {
   "name": "wvi-test-ui-components",
-  "version": "0.0.109",
+  "version": "0.0.110",
   "description": "React component library for WVI",
   "main": "src/dist/ui.js",
   "scripts": {
