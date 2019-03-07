@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
+import {textStyles} from "../../../stories/theme";
 
 
 export default function FieldSelect(props) {
@@ -66,8 +68,7 @@ export default function FieldSelect(props) {
   const FieldSelectContainer = styled.div`
     display: inline-block;
     margin-bottom: 0;
-    font-family: Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 16px;
+    ${textStyles};
     font-weight: 400;
     color: #363636;
     
@@ -100,12 +101,11 @@ export default function FieldSelect(props) {
       height: 44px;
       margin-top: 8px;
       padding: 10px 0 12px;
-      font-family: 'Lato', Arial, sans-serif;
       background: #f1f1f1;
       border-radius: 5px;
       border: 1px solid #d6d6d6;
       box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-      font-size: 16px;
+      ${textStyles};
     `;
 
     const errors = renderErrors();

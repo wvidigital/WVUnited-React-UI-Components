@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Heading from '../Heading';
 import LinkButton from "../Button/LinkButton";
+import ActionButton from "../Button/ActionButton";
 import Icon from "../Icon";
 import Image from "../Image";
 import Text from "../Text";
@@ -63,10 +64,14 @@ export default class ItemBox extends React.Component {
     }
   }
 
-  renderLinkButton() {
+  renderButton() {
     const button = this.props.data.button;
     if (button !== undefined) {
-      return <LinkButton text={button.text} link={button.link}/>;
+      return (
+        (button.action !== undefined) ?
+          <ActionButton text={button.text} action={button.action}/> :
+          <LinkButton text={button.text} link={button.link}/>
+      );
     }
   }
 
@@ -147,15 +152,7 @@ export default class ItemBox extends React.Component {
     text-align: center;
     box-sizing: border-box;
     
-    background-color: ${this.props.background};    
-    
-    // // Check if the first div contains heading
-    // // and remove it's margin-top.
-    // .item-box-content > div:first-of-type {
-    //   h3 {
-    //     margin-top: 0;
-    //   }
-    // }
+    background-color: ${this.props.background};
     
     @media all and (max-width: 640px) {
       max-width: 100%;
@@ -165,7 +162,6 @@ export default class ItemBox extends React.Component {
         padding: 20px;
       }
     }
-
     img {
       max-width: 100%;
       
@@ -176,7 +172,6 @@ export default class ItemBox extends React.Component {
     }
       
     .child-info-icons {
-
       .mwv-icon {
         justify-content: left;
         text-align: center;
@@ -224,7 +219,7 @@ export default class ItemBox extends React.Component {
         }
       }     
     }
-    `;
+  `;
 
     return (
       <ItemBox className='item-box'>
@@ -236,7 +231,7 @@ export default class ItemBox extends React.Component {
           {this.renderDescription()}
           {this.renderInfoIcons()}
           {this.renderFormFields()}
-          {this.renderLinkButton()}
+          {this.renderButton()}
         </div>
       </ItemBox>
     );

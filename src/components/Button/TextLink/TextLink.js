@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
+import {textStyles} from "../../../../stories/theme";
 
 export default function TextLink(props) {
 
@@ -9,9 +11,8 @@ export default function TextLink(props) {
   /* Adapt the colors based on primary prop */
   background: ${props.background};
   color: ${props.color};
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 20px;
-  font-weight: 300;
+
+  ${textStyles};
   text-decoration: none;
   
   &:hover,

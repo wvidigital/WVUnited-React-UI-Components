@@ -1,10 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
+import {textStyles} from '../../../../stories/theme';
 
 export default function ActionButton(props) {
 
-  // Create a Text component that will render a <p> element with styles.
+  /**
+   * Handles the action.
+   */
+  const handleAction = () => {
+    const { action } = props;
+    action();
+  }
+
+  // Create a Button component that will render a <button> element with styles.
   const Button = styled.button`
   display: inline-block;
   padding: 10px 30px 12px;
@@ -17,8 +27,7 @@ export default function ActionButton(props) {
   border: 1px solid ${props.background};
   border-radius: 5px;
 
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 16px;
+  ${textStyles};
   line-height: 1;
   font-weight: 400;
   text-decoration: none;
@@ -37,9 +46,9 @@ export default function ActionButton(props) {
   `;
 
   return  (
-    <Button
-      onClick={props.action}
-    >{props.text}</Button>
+    <Button onClick={() => handleAction()}>
+      {props.text}
+    </Button>
   );
 }
 
