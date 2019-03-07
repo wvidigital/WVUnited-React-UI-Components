@@ -1,13 +1,13 @@
 import React from 'react';
-import {storiesOf} from "@storybook/react";
-import ItemBox from "./ItemBox";
+import {storiesOf} from '@storybook/react';
+import ItemBox from './ItemBox';
 import {
   childFinderCopy,
   childInfoCopy,
   copyButton,
   imageCopyButton,
   titleCopyButton
-} from "../../../stories/data";
+} from '../../../stories/data';
 
 
 export const storiesItemBox = storiesOf('Complex components (Items)', module);

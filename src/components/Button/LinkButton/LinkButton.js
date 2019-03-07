@@ -6,7 +6,7 @@ import {textStyles} from '../../../../stories/theme';
 
 export default function LinkButton(props) {
 
-  // Create a Text component that will render a <p> element with styles.
+  // Create a LinkButton component that will render a <a> element with styles.
   const LinkButton = styled.a`
   display: inline-block;
   padding: 10px 30px 12px;
