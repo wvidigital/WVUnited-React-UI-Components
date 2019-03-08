@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import {textStyles} from '../../../../stories/theme';
 
 export default function TextLink(props) {
 
-  // Create a Text component that will render a <p> element with styles.
+  // Create a Text component that will render a <a> element with styles.
   const TextLink = styled.a`
-  /* Adapt the colors based on primary prop */
   background: ${props.background};
   color: ${props.color};
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 20px;
-  font-weight: 300;
+  ${textStyles};
   text-decoration: none;
   
   &:hover,

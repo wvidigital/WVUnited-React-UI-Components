@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import Slider from "react-slick";
 
 // Styles for the slick slider.
-import "slick-carousel/slick/slick.css";
+import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import Icon from "../Icon";
-import ItemBox from "../ItemBox";
+import Icon from '../Icon';
+import ItemBox from '../ItemBox';
+import {textStyles} from '../../../stories/theme';
 
 export default function Grid(props) {
 
@@ -51,7 +52,6 @@ export default function Grid(props) {
     centerPadding: '50px',
     initialSlide: 1,
 
-
     nextArrow: <NextArrow/>,
     prevArrow: <PrevArrow/>,
 
@@ -73,21 +73,17 @@ export default function Grid(props) {
 
   let rightArrowPositionPx = props.width/2 - 44;
 
-  // Create a Grid component that will render a <p> element with styles.
-  const Grid = styled.div`
-  
+  // Create a Grid component that will render a <div> element with styles.
+  const Grid = styled.div`  
   display: ${(props.isSlider)} ? 'flex' : 'block';
   flex-direction: ${props.direction};
-  flex-wrap: wrap;
-  
+  flex-wrap: wrap;  
   justify-content: space-evenly;
   
   margin: 0 0 8px;
   background: ${props.background};
   color: ${props.color};
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
+  ${textStyles};
   
   // Styles for slick.
   .slick-list {
@@ -142,7 +138,6 @@ export default function Grid(props) {
       top: 50%;
       margin-top:-30px;
       
-      
       @media all and (max-width: 1440px) {
         display: none;
       }
@@ -150,15 +145,13 @@ export default function Grid(props) {
     }
   }
   
-  .slick-prev {    
-            
+  .slick-prev {
     .mwv-icon {
       left: -100px;
     }
   }
   
   .slick-next {
-  
     left: calc(50% + ${rightArrowPositionPx}px);
     
     @media all and (max-width: 1440px) {
@@ -212,5 +205,3 @@ Grid.propTypes = {
   background: PropTypes.string,
   color: PropTypes.string,
 }
-
-

@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import {textStyles} from '../../../../stories/theme';
 
 export default function LinkButton(props) {
 
-  // Create a Text component that will render a <p> element with styles.
+  // Create a LinkButton component that will render a <a> element with styles.
   const LinkButton = styled.a`
   display: inline-block;
   padding: 10px 30px 12px;
@@ -17,8 +18,7 @@ export default function LinkButton(props) {
   border: 1px solid ${props.background};
   border-radius: 5px;
 
-  font-family: 'Lato', Arial, sans-serif;
-  font-size: 16px;
+  ${textStyles};
   line-height: 1;
   font-weight: 400;
   text-decoration: none;
@@ -28,12 +28,12 @@ export default function LinkButton(props) {
   &:focus,
   &:active,
   &:active:focus {
-      border-color: ${props.background};
-      background: ${props.color};
-      color: ${props.background};
-      text-decoration: none;
-      outline: 0;
-    }
+    border-color: ${props.background};
+    background: ${props.color};
+    color: ${props.background};
+    text-decoration: none;
+    outline: 0;
+  }
 `;
 
   return  (

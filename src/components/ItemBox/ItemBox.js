@@ -3,26 +3,27 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Heading from '../Heading';
-import LinkButton from "../Button/LinkButton";
-import ActionButton from "../Button/ActionButton";
-import Icon from "../Icon";
-import Image from "../Image";
-import Text from "../Text";
-import FieldSelect from "../FieldSelect";
+import LinkButton from '../Button/LinkButton';
+import ActionButton from '../Button/ActionButton';
+import Icon from '../Icon';
+import Image from '../Image';
+import Text from '../Text';
+import FieldSelect from '../FieldSelect';
 
 
 export default class ItemBox extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = { width: 0, height: 0 };
     this.updateDimensions = this.updateDimensions.bind(this);
   }
 
-
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
     this.updateDimensions();
   }
+
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDimensions);
   }
@@ -35,7 +36,7 @@ export default class ItemBox extends React.Component {
     const image = this.props.data.image;
     if (image !== undefined) {
       return (
-        <div>
+        <div className='item-box-image'>
           {(typeof image === 'string') ?
             <Image source={image} /> :
             <Image
@@ -135,8 +136,6 @@ export default class ItemBox extends React.Component {
   // }
 
 
-
-
   render() {
     const ItemBox = styled.div`
     max-width: 320px;
@@ -152,15 +151,7 @@ export default class ItemBox extends React.Component {
     text-align: center;
     box-sizing: border-box;
     
-    background-color: ${this.props.background};    
-    
-    // // Check if the first div contains heading
-    // // and remove it's margin-top.
-    // .item-box-content > div:first-of-type {
-    //   h3 {
-    //     margin-top: 0;
-    //   }
-    // }
+    background-color: ${this.props.background};
     
     @media all and (max-width: 640px) {
       max-width: 100%;
@@ -186,7 +177,6 @@ export default class ItemBox extends React.Component {
         justify-content: left;
         text-align: center;
         margin-bottom: 8px;
-        
         
         @media all and (min-width: 640px) {
           display: inline-block;
@@ -216,8 +206,7 @@ export default class ItemBox extends React.Component {
     .form-fields {
       width: 100%;
       padding: 20px 0;
-      text-align: left;
-      
+      text-align: left;      
       
       .form__item {
         width: 100%;
@@ -229,13 +218,11 @@ export default class ItemBox extends React.Component {
         }
       }     
     }
-    `;
+  `;
 
     return (
       <ItemBox className='item-box'>
-        <div className='item-box-image'>
-          {this.renderImage()}
-        </div>
+        {this.renderImage()}
         <div className='item-box-content'>
           {this.renderTitle()}
           {this.renderDescription()}

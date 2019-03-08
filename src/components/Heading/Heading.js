@@ -27,7 +27,6 @@ export default function Heading(props) {
   // Create a Heading component that will render a <h1> to <h3>
   // element with styles, depending on the prop for size.
   const Heading = styled.div`
-  /* Adapt the colors based on primary prop */
   background: ${props.background};
   color: ${props.color};
 

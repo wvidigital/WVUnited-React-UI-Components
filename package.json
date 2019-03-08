@@ -1,6 +1,6 @@
 {
-  "name": "wvi-test-ui-components",
-  "version": "0.0.111",
+  "name": "@worldvision/ui-components",
+  "version": "0.0.14",
   "description": "React component library for WVI",
   "main": "src/dist/ui.js",
   "scripts": {
@@ -42,7 +42,7 @@
     "url": "git+https://github.com/wvidigital/WVUnited-React-UI-Components.git"
   },
   "author": "Rossi Ivanova",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/wvidigital/WVUnited-React-UI-Components/issues"
   },

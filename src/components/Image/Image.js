@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 export default function Image(props) {
 
-  // Create a Image component that will render a <p> element with styles.
+  // Create a Image component that will render a <img> element with styles.
   const Image = styled.img`
     display: block;
 `;
