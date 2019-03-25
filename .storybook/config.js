@@ -7,7 +7,8 @@ import {withBackgrounds} from "@storybook/addon-backgrounds";
 
 // Backgrounds decorator.
 const backgrounds = withBackgrounds([
-  { name: 'mwv grey' , value: '#efefef', default: true },
+  { name: 'white' , value: '#ffffff', default: true },
+  { name: 'mwv grey' , value: '#efefef' },
   { name: 'mwv orange', value: '#ff6600' },
   { name: 'mwv blue', value: '#00acca' },
   { name: 'child finder' , value: '#CAC4BB'},
