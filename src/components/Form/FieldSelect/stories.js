@@ -1,7 +1,7 @@
 import {storiesOf} from "@storybook/react";
 import React from "react";
 
-import {selectFieldErrorProps, selectFieldProps} from "../../../stories/data";
+import {selectFieldErrorProps, selectFieldProps} from "../../../../stories/data";
 import FieldSelect from "./FieldSelect";
 
 export const storiesFormFields = storiesOf('Form fields', module);
