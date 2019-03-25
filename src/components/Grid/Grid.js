@@ -9,7 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import Icon from '../Icon';
 import ItemBox from '../ItemBox';
-import {textStyles} from '../../../stories/theme';
+import {textStyles} from '../../styles/theme';
 
 export default function Grid(props) {
 
