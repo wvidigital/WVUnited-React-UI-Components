@@ -8,7 +8,7 @@ import ActionButton from '../Button/ActionButton';
 import Icon from '../Icon';
 import Image from '../Image';
 import Text from '../Text';
-import FieldSelect from '../FieldSelect';
+import FieldSelect from '../Form/FieldSelect';
 
 
 export default class ItemBox extends React.Component {
