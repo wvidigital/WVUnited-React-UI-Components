@@ -2,3 +2,5 @@
 node_modules/
 # User-specific stuff:
 .idea
+src/dist
+/package-lock.json
