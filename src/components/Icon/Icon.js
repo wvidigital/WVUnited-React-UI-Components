@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {iconContentStyles} from '../../../stories/theme';
+import {iconContentStyles} from '../../styles/theme';
 
 function iconSize(props) {
   switch (props.size) {
