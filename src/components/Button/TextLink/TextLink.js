@@ -11,6 +11,7 @@ export default function TextLink(props) {
   color: ${props.color};
   ${textStyles};
   text-decoration: none;
+  cursor: pointer;
   
   &:hover,
   &:focus,

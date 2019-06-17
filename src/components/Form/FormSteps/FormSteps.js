@@ -6,8 +6,9 @@
 */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import FormGrid from "../FormGrid";
+import {formGridProps} from "../FormGrid/stories/data";
 
 function FormSteps(props) {
 
@@ -15,7 +16,12 @@ function FormSteps(props) {
     
     `;
 
-    return <FormField />
+    return (
+
+      <FormGrid fields={ formGridProps() } />
+    );
+    // Shouldn't we return form grid here for a single step?
+    // Should we add the navigation (and progress bar), submit step button components in here
 }
 
 export default FormSteps;

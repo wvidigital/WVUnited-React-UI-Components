@@ -1,6 +1,6 @@
 {
-  "name": "@worldvision/ui-components",
-  "version": "0.0.14",
+  "name": "wvi-test-ui-components",
+  "version": "0.0.149974",
   "description": "React component library for WVI",
   "main": "src/dist/ui.js",
   "scripts": {
@@ -31,8 +31,8 @@
   },
   "dependencies": {
     "prop-types": "^15.7.1",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-slick": "^0.23.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.1.3"

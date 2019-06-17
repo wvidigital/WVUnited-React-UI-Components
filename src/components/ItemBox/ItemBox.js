@@ -8,7 +8,9 @@ import ActionButton from '../Button/ActionButton';
 import Icon from '../Icon';
 import Image from '../Image';
 import Text from '../Text';
-import FieldSelect from '../Form/FieldSelect';
+
+import FormGrid from '../Form/FormGrid';
+import globalStyles from '../../styles/globalStyles';
 
 
 export default class ItemBox extends React.Component {
@@ -106,7 +108,8 @@ export default class ItemBox extends React.Component {
     if (fields !== undefined) {
       return (
         <div className='form-fields'>
-          { this.renderFormField() }
+        <FormGrid {...this.props.data.form_fields} />
+          {/* { this.renderFormField() } */}
         </div>
       )
     }
@@ -115,7 +118,8 @@ export default class ItemBox extends React.Component {
   renderFormField() {
     // equalHeights();
     return this.props.data.form_fields.map((props) =>
-      <FieldSelect key={props.name} {...props} />
+      // <FieldSelect
+      <FormField key={props.name} {...props} />
     );
   }
 
@@ -146,7 +150,8 @@ export default class ItemBox extends React.Component {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border-top: 4px solid ${this.props.borderColor};
-    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+    
+    box-shadow: ${globalStyles.boxShadow};
     
     text-align: center;
     box-sizing: border-box;
@@ -206,7 +211,12 @@ export default class ItemBox extends React.Component {
     .form-fields {
       width: 100%;
       padding: 20px 0;
-      text-align: left;      
+      text-align: left;
+
+      & > div {
+        display: inline-block;
+        width: 100%;
+      }
       
       .form__item {
         width: 100%;

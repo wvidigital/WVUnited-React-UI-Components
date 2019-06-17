@@ -63,78 +63,74 @@ export const childInfoCopy = {
 
 export const childFinderCopy = {
   description: 'Chocolate donut candy cupcake donut brownie gummi bears liquorice carrot cake. Pudding croissant liquorice gummi bears cake icing. Fruitcake candy fruitcake bear claw danish tootsie roll sweet topping.',
-  form_fields: [
-    {
-      name: 'field_select_child_gender',
-      field: {
-        data: [
-          {
-            label: '-- Please select --',
-            value: '_null'
+  form_fields: {
+    fields: [
+        {
+          name: 'field_select_child_gender',
+          data: [
+            {
+              label: '-- Please select --',
+              value: '_null'
+            },
+            {
+              label: 'Girl',
+              value: 'girl'
+            },
+            {
+              label: 'Boy',
+              value: 'boy'
+            }
+          ],
+          label: 'Select gender',
+          required: false,
+          fieldState: {
+            errorMessages: [],
+            name: 'field_select_child_gender',
+            required: true,
+            value: '',
+            visible: false
           },
-          {
-            label: 'Girl',
-            value: 'girl'
+          handleChange: (name, value) => handleFieldChange(name, value),
+          handleVisibility: (name, value) => handleFieldVisibility(name, value),
+        },
+        {
+          name: 'field_select_child_country',
+          data: [
+            {
+              label: '-- Please select --',
+              value: '_null'
+            },
+            {
+              label: 'Afghanistan',
+              value: 'AF'
+            },
+            {
+              label: 'Amerikanisch-Samoa',
+              value: 'AS'
+            },
+            {
+              label: 'Bulgarien',
+              value: 'BG'
+            },
+            {
+              label: 'Deutschland',
+              value: 'DE'
+            },
+          ],
+          label: 'Select country',
+          required: false,
+          fieldState: {
+            errorMessages: [],
+            name: 'field_select_child_country',
+            required: true,
+            value: '',
+            visible: false
           },
-          {
-            label: 'Boy',
-            value: 'boy'
-          }
-        ],
-        label: 'Select gender',
-        name: 'field_select_child_gender',
-        required: false,
-      },
-      fieldState: {
-        errorMessages: [],
-        name: 'field_select_child_gender',
-        required: true,
-        value: '',
-        visible: false
-      },
-      handleChange: (name, value) => handleFieldChange(name, value),
-      handleVisibility: (name, value) => handleFieldVisibility(name, value),
-    },
-    {
-      name: 'field_select_child_country',
-      field: {
-        data: [
-          {
-            label: '-- Please select --',
-            value: '_null'
-          },
-          {
-            label: 'Afghanistan',
-            value: 'AF'
-          },
-          {
-            label: 'Amerikanisch-Samoa',
-            value: 'AS'
-          },
-          {
-            label: 'Bulgarien',
-            value: 'BG'
-          },
-          {
-            label: 'Deutschland',
-            value: 'DE'
-          },
-        ],
-        label: 'Select country',
-        name: 'field_select_child_country',
-        required: false,
-      },
-      fieldState: {
-        errorMessages: [],
-        name: 'field_select_child_country',
-        required: true,
-        value: '',
-        visible: false
-      },
-      handleChange: (name, value) => handleFieldChange(name, value),
-      handleVisibility: (name, value) => handleFieldVisibility(name, value),
-    }
-  ],
+          handleChange: (name, value) => handleFieldChange(name, value),
+          handleVisibility: (name, value) => handleFieldVisibility(name, value),
+        }
+      ],
+  },
   button: {
     text: 'Click here',
     action: () => handleSearch(),

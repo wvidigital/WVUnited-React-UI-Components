@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import {storiesText} from '../src/components/Text/stories';
 import {storiesButton} from '../src/components/Button/stories';
 import {storiesIcon} from '../src/components/Icon/stories';
-import {storiesFormFields} from '../src/components/Form/FieldSelect/stories';
+import {storiesFormFields} from '../src/components/Form/Fields/stories';
 import {storiesFormGrid} from '../src/components/Form/FormGrid/stories';
 import {storiesItemBox} from '../src/components/ItemBox/stories';
 import {storiesGrid} from "../src/components/Grid/stories";

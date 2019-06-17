@@ -29,9 +29,8 @@ function FormGrid(props) {
         let selectedField = false;
         // Gets all fields without value
         props.fields.map((field, index) => {
-            (field.field.required) && fieldsWithoutValue.push(index)
-            if (event.target.name === field.field.name) 
-                
+            (field.required) && fieldsWithoutValue.push(index)
+            if (event.target.name === field.name) 
                 selectedField = index;
         })
 
@@ -51,35 +50,35 @@ function FormGrid(props) {
     `;
 
     const FormGridField = styled.div`
-        flex-basis: 50%;
-        flex-grow: 2;
-        margin: 5px;
+        flex-basis: calc(50% - 6px);
+        margin: 6px 0;
     `;
+
+    // console.error('props in form grid', props);
 
     return (
         <FormGridContainer>
-                {props.fields.map((field, index) => 
+            {props.fields.map((field, index) => 
                 <FormGridField key={index} order={index}>
                     <FormField 
                         // error function as prop
                         handleFormGridError={handleFormGridError} 
                         formGridErrorMessage={errorFields.includes(index) ? 'Hey you forgot something' : ''}
-                        {...field.field} />
+                        {...field}
+                    />
                 </FormGridField>)
-                }
+            }
         </FormGridContainer>
     )
 }
 
 FormGrid.defaultProps = {
     fields: {
-        field: {
-            name: '',       
-            type: 'input',
-            label: '',
-            required: false,
-            data: [],
-        },
+        name: '',       
+        type: 'input',
+        label: '',
+        required: false,
+        data: [],
         fieldState: {
             name: '',
             value: '',
