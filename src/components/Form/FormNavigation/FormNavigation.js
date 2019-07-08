@@ -17,7 +17,6 @@ import fonts from '../../../../fonts/gill-sans-suomi-hand-script/style.css';
 
 
 function FormNavigation(props) {
-
     const FormNavigation = styled.div`
         & > div {
             position: relative;
@@ -82,12 +81,14 @@ function FormNavigation(props) {
                   </div>
                 );
             case ('bottom'):
+
+                const previousStep = props.steps[props.activeStep-1];
+                const nextStep = props.steps[props.activeStep+1];
                 return (
                   <div>
-                      <TextLink text={`
-                            ${props.activeStep}. ${props.steps[props.activeStep-1].title}
-                          `} />
-                      <ActionButton text={props.steps[props.activeStep+1].title} />
+                      {previousStep &&
+                      <TextLink text={`${props.activeStep}. ${previousStep.title}`} action={props.actionPrev}/>}
+                      {nextStep && <ActionButton text={nextStep.title} action={props.actionNext} />}
                   </div>
                 );
             default:
@@ -102,13 +103,15 @@ function FormNavigation(props) {
     );
 }
 
-TextLink.defaultProps = {
+FormNavigation.defaultProps = {
     position: 'top',
     activeStep: 1,
     steps: 1,
 };
 
 FormNavigation.propTypes = {
+    actionPrev: PropTypes.func.isRequired,
+    actionNext: PropTypes.func.isRequired,
     position: PropTypes.string.isRequired,
     activeStep: PropTypes.number.isRequired,
     steps: PropTypes.array.isRequired,

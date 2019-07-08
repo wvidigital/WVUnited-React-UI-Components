@@ -14,12 +14,15 @@ import {
   numberFieldErrorProps,
   textareaFieldProps,
   textareaFieldErrorProps,
+  dollarHandlesFieldProps,
 } from "../FormGrid/stories/data";
 
 import FormField from "../FormField";
 import FieldText from "./FieldText";
 import FieldRadio from "./FieldRadio";
 import FieldSelect from "./FieldSelect";
+import FieldCheckbox from "./FieldCheckbox";
+import FieldDollarHandles from "./FieldDollarHandles";
 
 export const storiesFormFields = storiesOf('Form fields', module);
 
@@ -42,14 +45,17 @@ storiesFormFields
   .add('Radio with validation error', () => (
     <FormField { ...radioFieldErrorProps } />
   ))
+  .add('Dollar Handles', () => (
+    <FieldDollarHandles { ...dollarHandlesFieldProps } />
+  ))
   .add('Checkbox', () => (
-    <FormField { ...checkboxFieldProps } />
+    <FieldCheckbox { ...checkboxFieldProps } />
   ))
   .add('Checkbox with validation error', () => (
     <FormField { ...checkboxFieldErrorProps } />
   ))
   .add('Number', () => (
-    <FormField { ...numberFieldProps } />
+    <FieldText { ...numberFieldProps } />
   ))
   .add('Number with validation error', () => (
     <FormField { ...numberFieldErrorProps } />

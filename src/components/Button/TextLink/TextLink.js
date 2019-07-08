@@ -4,6 +4,13 @@ import styled from 'styled-components';
 import {textStyles} from '../../../styles/theme';
 
 export default function TextLink(props) {
+  /**
+   * Handles the action.
+   */
+  const handleAction = () => {
+    const { action } = props;
+    action();
+  }
 
   // Create a Text component that will render a <a> element with styles.
   const TextLink = styled.a`
@@ -21,7 +28,10 @@ export default function TextLink(props) {
   }
 `;
 
+
   return  (
+    (props.action !== undefined) ?
+    <TextLink onClick={() => handleAction()} title={props.text}>{props.text}</TextLink> :
     <TextLink href={props.link} title={props.text}>{props.text}</TextLink>
   );
 }

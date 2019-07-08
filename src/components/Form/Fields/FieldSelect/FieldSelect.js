@@ -43,7 +43,7 @@ FieldSelect.defaultProps = {
   name: '',
   type: '',
   label: '',
-  value: '',
+  error: '',
   data: [
     {
       label: '',

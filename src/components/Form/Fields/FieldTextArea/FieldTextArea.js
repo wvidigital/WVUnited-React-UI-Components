@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import {Field, Label} from "../../FormField/Field";
 
 export default function FieldTextArea(props) {
+  // Map default value on first mount.
+  const value = (props.settings.defaultValue) &&
+  (props.settings.defaultValue.length > 0 && props.value === undefined) ?
+    props.settings.defaultValue : props.value;
+
   return (
     <Field>
       <Label {...props}/>
@@ -10,7 +15,7 @@ export default function FieldTextArea(props) {
         id={props.name}
         name={props.name}
         type={props.type}
-        value={props.value}
+        value={value}
         onChange={props.handleChange}
         placeholder={props.settings.placeholder}
         disabled={props.settings.disabled && 'disabled'}
@@ -23,7 +28,7 @@ FieldTextArea.defaultProps = {
   name: '',
   type: '',
   label: '',
-  value: '',
+  error: '',
   settings: {
     errorMessage: '',
     placeholder: '',
@@ -38,6 +43,7 @@ FieldTextArea.propTypes = {
   type: PropTypes.string.isRequired,
   label: PropTypes.string,
   value: PropTypes.string,
+  error: PropTypes.string,
   settings: PropTypes.object,
   handleChange: PropTypes.func,
 }

@@ -33,6 +33,7 @@ export default function Heading(props) {
   h1, h2, h3, h4, h5, h6 { 
     color: inherit;
     font-family: 'Gill Sans W04 Bold', Arial, sans-serif;
+    font-family: ${props.font};
     font-size: 24px;
     line-height: 1.2;
     text-align: center;
@@ -56,6 +57,7 @@ export default function Heading(props) {
 Heading.defaultProps = {
   size: 1,
   background: '',
+  font: '',
   color: '#ff6600',
 };
 

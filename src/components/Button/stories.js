@@ -1,5 +1,4 @@
 import React from 'react';
-import {action} from "@storybook/addon-actions";
 import {storiesOf} from "@storybook/react";
 
 import LinkButton from "./LinkButton";
@@ -11,7 +10,7 @@ storiesButton
   .add('Text link', () => (
     <TextLink
       text={'We have a text link here.'}
-      link={'#'}
+      action={()=>console.log('action')}
     />
   ))
   .add('Link button', () => (
@@ -23,6 +22,6 @@ storiesButton
   .add('Action button', () => (
     <ActionButton
       text={'Action button'}
-      action={action('REQUEST_DATA')}
+      action={()=>console.log('action')}
     />
   ));

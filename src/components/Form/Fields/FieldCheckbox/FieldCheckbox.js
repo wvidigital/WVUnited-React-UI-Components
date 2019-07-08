@@ -10,7 +10,7 @@ export default function FieldCheckbox(props) {
     position: relative;
     padding-left: 50px;
     line-height: 42px;
-    margin-bottom: 12px;
+    margin: 12px 0;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -76,7 +76,7 @@ FieldCheckbox.defaultProps = {
   name: '',
   type: '',
   label: '',
-  value: '',
+  error: '',
   settings: {
     errorMessage: '',
     placeholder: '',
@@ -91,6 +91,7 @@ FieldCheckbox.propTypes = {
   type: PropTypes.string.isRequired,
   label: PropTypes.string,
   value: PropTypes.string,
+  error: PropTypes.string,
   settings: PropTypes.object,
   handleChange: PropTypes.func,
 }

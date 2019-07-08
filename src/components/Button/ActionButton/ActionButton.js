@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import {textStyles} from '../../../styles/theme';
 
 export default function ActionButton(props) {
-
   /**
    * Handles the action.
    */

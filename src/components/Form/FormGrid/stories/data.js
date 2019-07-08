@@ -40,7 +40,9 @@ export const textFieldProps = {
   value: '',
   settings: {
     required: true,
+    disabled: true,
     placeholder: 'John Smith',
+    defaultValue: 'John Smith Default',
     maxLength: 20,
     errorMessage: "The field should not exceed @maxLength characters DE",
   },
@@ -67,7 +69,11 @@ export const radioFieldProps = {
       value: 'girl'
     },
   ],
+  value: 'girl',
   label: 'Radio field',
+  settings: {
+    disabled: true,
+  },
   handleChange: (event) => handleEventFieldChange(event),
 }
 
@@ -76,13 +82,74 @@ export const radioFieldErrorProps = {
   formGridErrorMessage: 'Field is required',
 }
 
+export const dollarHandlesFieldProps = {
+  name: 'field_dollar_handles',
+  type: 'radio',
+  data: {
+    once: {
+      defaultValue: 25,
+      options: [
+        {
+          image: null,
+          label: "25 €",
+          text: "test 25",
+          value: 25,
+        },
+        {
+          image: null,
+          label: "70 €",
+          text: "test 70",
+          value: 70,
+        },
+        {
+          image: null,
+          label: "100 €",
+          text: "test 100",
+          value: 100,
+        },
+      ]
+    },
+    month: {
+      defaultValue: 250,
+      options: [
+        {
+          image: null,
+          label: "250 €",
+          text: "test 250",
+          value: 250,
+        },
+        {
+          image: null,
+          label: "700 €",
+          text: "test 700",
+          value: 700,
+        },
+        {
+          image: null,
+          label: "1000 €",
+          text: "test 1000",
+          value: 1000,
+        },
+      ]
+    },
+  },
+  // value: 'girl',
+  label: 'Radio field',
+  settings: {
+    disabled: true,
+    defaultValue: 700,
+    occurrence: 'month',
+  },
+  value: 1000,
+  handleChange: (event) => handleEventFieldChange(event),
+}
+
 
 
 export const checkboxFieldProps = {
   name: 'field_checkbox',
   type: 'checkbox',
   label: 'Checkbox field',
-  required: true,
   handleChange: (name, value) => handleFieldChange(name, value),
   handleVisibility: (name, value) => handleFieldVisibility(name, value),
   fieldState: {
@@ -102,20 +169,14 @@ export const checkboxFieldErrorProps = {
 
 
 export const numberFieldProps = {
-  name: 'field_number',
+  name: 'dollar_amount',
   type: 'number',
-  label: 'Phone',
-  required: true,
-  placeholder: '0123456789',
-  handleChange: (name, value) => handleFieldChange(name, value),
-  handleVisibility: (name, value) => handleFieldVisibility(name, value),
-  fieldState: {
-    errorMessages: '',
-    name: 'field_number',
+  label: 'Mein betrag',
+  settings: {
     required: true,
-    value: '',
-    visible: false
-  }
+    defaultValue: 40,
+  },
+  handleChange: (event) => handleEventFieldChange(event),
 }
 
 export const numberFieldErrorProps = {
@@ -200,13 +261,10 @@ export const topNavigationProps = {
   steps: [
     {
       title: 'Meine Spende',
-      fields: {...formGridProps()}
     }, {
       title: 'Meine Daten',
-      fields: {...formGridProps()}
     }, {
       title: 'Zahlungsart',
-      fields: {...formGridProps()}
     }
   ],
 }
@@ -214,4 +272,11 @@ export const topNavigationProps = {
 export const bottomNavigationProps = {
   ...topNavigationProps,
   position: 'bottom',
+  actionPrev: () => console.log('action prev'),
+  actionNext: () => console.log('action next')
+}
+
+export const formHeaderProps = {
+  ...topNavigationProps,
+  title: 'Form Header Title'
 }

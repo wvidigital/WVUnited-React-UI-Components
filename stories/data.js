@@ -33,6 +33,18 @@ export const imageCopyButton = {
   }
 };
 
+
+export const formSidebar = {
+  title: 'Choose a child for me',
+  description: 'Bear claw halvah <b>fruitcake icing</b>. Apple pie croissant candy bonbon sweet roll.',
+  image: {
+    source: 'http://placekitten.com/400/400',
+    link: 'http://placekitten.com/400/400',
+    alt: 'Maggie Smith',
+    title: 'Maggie Smith'
+  },
+};
+
 export const childInfoCopy = {
   image: {
     source: 'http://placekitten.com/400/400',

@@ -63,7 +63,7 @@ export default class ItemBox extends React.Component {
   renderDescription() {
     const text = this.props.data.description;
     if (text !== undefined) {
-      return <Text>{text}</Text>;
+      return <Text background={'transparent'}>{text}</Text>;
     }
   }
 

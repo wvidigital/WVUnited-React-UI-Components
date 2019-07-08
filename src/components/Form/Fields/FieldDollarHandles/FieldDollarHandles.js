@@ -2,33 +2,44 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import globalStyles from '../../../../styles/globalStyles';
+import {textStyles} from "../../../../styles/theme";
 
-export default function FieldRadio(props) {
+export default function FieldDollarHandles(props) {
   /**
   * Renders the radio options.
   */
   function renderOptions() {
     const { data } = props;
+    const occurrenceKey = (props.settings.occurrence) ?
+      props.settings.occurrence : Object.keys(data)[0];
 
-    return data.map((option) => {
+    return data[occurrenceKey].options.map((option) => {
       // Create a RadioOption component that will render a <div> element with styles.
       const RadioOption = styled.div`
-        margin: 0 15px;
-            
+        margin: 0 10px;
+        
         label {
-          display: block;
           position: relative;
-          padding-left: 50px;
-          line-height: 42px;
-          margin: 12px 0;
-          cursor: pointer;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-  
+          display: block;
+          width: auto;
+          padding: 12px 20px;
+          color: black;
+          border-radius: 5px;
+          background: ${globalStyles.colors.formBackground};
+          border: 1px solid ${globalStyles.colors.borderColor};
+          ${textStyles};
+          font-weight: bold;
+          font-weight: bold;
+          
+          ${parseInt(props.value) === option.value && `
+            border-color: ${globalStyles.colors.wvColor};
+            background: ${globalStyles.colors.wvColor};
+            color: #fff;
+         `}
+            
           input {
             position: absolute;
+            top: 0;
             height: 100%;
             width: 100%;
             left: 0;
@@ -37,38 +48,7 @@ export default function FieldRadio(props) {
             cursor: pointer;
           }
         }
-    `;
-
-      // Create a Span component that will render a <span> element with styles.
-      const Span = styled.span`
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 40px;
-        width: 40px;
-        z-index: 1;
-        border-radius: 50%;
-        background-color: #d8d8d8;
-      
-        &:after {
-          content: "";
-          position: absolute;
-          left: 14px;
-          top: 12px;
-          width: 8px;
-          height: 10px;
-          border: solid white;
-          border-width: 0 3px 3px 0;
-          -webkit-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-        }
-    
-      ${props.value === option.value && `
-        border-color: ${globalStyles.colors.wvColor};
-        background: ${globalStyles.colors.wvColor};
-      `}
-  `;
+      `;
 
       return (
         <RadioOption key={option.value}>
@@ -81,7 +61,6 @@ export default function FieldRadio(props) {
               value={option.value}
               onChange={props.handleChange}
             />
-            <Span/>
           </label>
         </RadioOption>
       );
@@ -90,9 +69,10 @@ export default function FieldRadio(props) {
 
   // Create a FieldSelectContainer component that will render a <div> element with styles.
   const RadioContainer = styled.div`
-    text-align: center;
     display: flex;
-    margin: 0 -15px;
+    flex-wrap: nowrap;
+    margin: 0 -10px;
+    text-align: center;
   `;
 
   return (
@@ -102,26 +82,29 @@ export default function FieldRadio(props) {
   )
 }
 
-FieldRadio.defaultProps = {
+FieldDollarHandles.defaultProps = {
   name: '',
   type: '',
   label: '',
   error: '',
-  data: [
-    {
+  data: {
+    occurrence: {
+      image: '',
       label: '',
+      text: '',
       value: ''
-    }
-  ],
+    },
+  },
   settings: {
     errorMessage: '',
     placeholder: '',
     required: false,
-    defaultValue: ''
+    defaultValue: '',
+    occurrence: ''
   },
 };
 
-FieldRadio.propTypes = {
+FieldDollarHandles.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   label: PropTypes.string,

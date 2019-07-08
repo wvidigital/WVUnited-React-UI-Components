@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Field, Label, Error} from '../../FormField/Field';
 
-
 export default function FieldText(props) {
   return (
     <Field>
@@ -25,7 +24,6 @@ FieldText.defaultProps = {
   name: '',
   type: '',
   label: '',
-  value: '',
   error: '',
   settings: {
     errorMessage: '',

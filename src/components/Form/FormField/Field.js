@@ -59,12 +59,22 @@ export function Label(props) {
           margin-right: 2px;
       }`
     }
+    
+   ${props.settings.disabled && `
+      &~ select,
+      &~ input,
+      &~ textarea {          
+        color: #888;
+        cursor: not-allowed;
+      }`
+    }
+    
     ${props.error && `
-            &~ select,
-            &~ input,
-            &~ textarea {
-                border-color: ${globalStyles.colors.errorColor};
-            }`
+      &~ select,
+      &~ input,
+      &~ textarea {
+          border-color: ${globalStyles.colors.errorColor};
+      }`
     }`;
 
   return <Label htmlFor={props.name}>{props.label}</Label>;
