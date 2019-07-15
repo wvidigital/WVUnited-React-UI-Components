@@ -4,9 +4,9 @@
   font-family: 'mwv_icons';
   src: url('mwv_icons.eot');
   src: url('mwv_icons.eot?#iefix') format('embedded-opentype'),
-  url('mwv_icons.woff') format('woff'),
-  url('mwv_icons.ttf') format('truetype'),
-  url('mwv_icons.svg#mwv_icons') format('svg');
+    url('mwv_icons.woff') format('woff'),
+    url('mwv_icons.ttf') format('truetype'),
+    url('mwv_icons.svg#mwv_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }

@@ -1,31 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Field, Label} from '../../FormField/Field';
+import { Field, Label } from '../../FormField/Field';
 
 export default function FieldSelect(props) {
   /**
-  * Renders the select options.
-  */
+   * Renders the select options.
+   */
   function renderOptions() {
     const { data } = props;
 
-    return data.map((option) => {
+    return data.map(option => {
       const optionAttributes = {
         key: option.value,
         value: option.value,
       };
 
-      return (
-        <option {...optionAttributes}>
-          {option.label}
-        </option>
-      );
+      return <option {...optionAttributes}>{option.label}</option>;
     });
   }
 
   return (
     <Field>
-      <Label {...props}/>
+      <Label {...props} />
       <select
         id={props.name}
         name={props.name}
@@ -47,15 +43,15 @@ FieldSelect.defaultProps = {
   data: [
     {
       label: '',
-      value: ''
-    }
+      value: '',
+    },
   ],
   settings: {
     errorMessage: '',
     placeholder: '',
     required: false,
     disabled: false,
-    defaultValue: ''
+    defaultValue: '',
   },
 };
 
@@ -67,4 +63,4 @@ FieldSelect.propTypes = {
   data: PropTypes.array,
   settings: PropTypes.object,
   handleChange: PropTypes.func,
-}
+};

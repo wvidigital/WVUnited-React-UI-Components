@@ -1,8 +1,8 @@
 import React from 'react';
-import {storiesOf} from "@storybook/react";
+import { storiesOf } from '@storybook/react';
 
-import ItemBox from "./ItemBox";
-import Sidebar from "../Sidebar";
+import ItemBox from './ItemBox';
+import Sidebar from '../Sidebar';
 import {
   childFinderCopy,
   childInfoCopy,
@@ -10,9 +10,9 @@ import {
   imageCopyButton,
   titleCopyButton,
   formSidebar,
-} from "../../../stories/data";
-import ChildfinderBox from "../ChildfinderBox";
-import {text} from "@storybook/addon-knobs";
+} from '../../../stories/data';
+import ChildfinderBox from '../ChildfinderBox';
+import { text } from '@storybook/addon-knobs';
 
 // const childFinderBoxCopy =  {
 //   description: text('description', '14-year-old männlich'),
@@ -28,37 +28,28 @@ import {text} from "@storybook/addon-knobs";
 
 const iconsCopy = {
   icons: [
-    {type: "waterdrop", label: "Clean Water"},
-    {type: "health", label: "Healthcare"},
-    {type: "pencil", label: "Education"},
-    {type: "corn", label: "Nutritious Food"},
-    {type: "protection", label: "Child Protection"},
-    {type: "house", label: "Disaster Response"}
+    { type: 'waterdrop', label: 'Clean Water' },
+    { type: 'health', label: 'Healthcare' },
+    { type: 'pencil', label: 'Education' },
+    { type: 'corn', label: 'Nutritious Food' },
+    { type: 'protection', label: 'Child Protection' },
+    { type: 'house', label: 'Disaster Response' },
   ],
-  prefix: "Depending on the needs of a child’s community, your sponsorship provides things like:",
-  suffix: "…and so much more!",
-  type: 'info'
-}
+  prefix:
+    'Depending on the needs of a child’s community, your sponsorship provides things like:',
+  suffix: '…and so much more!',
+  type: 'info',
+};
 
 export const storiesItemBox = storiesOf('Complex components (Items)', module);
 
 storiesItemBox
-  .add('Form sidebar', () => (
-    <Sidebar data={formSidebar} />
-  ))
-  .add('Child finder box', () => (
-    <ChildfinderBox
-      data={childFinderBoxCopy}
-    />
-  ))
+  .add('Form sidebar', () => <Sidebar data={formSidebar} />)
+  .add('Child finder box', () => <ChildfinderBox data={childFinderBoxCopy} />)
   .add('Child finder box list with icons', () => (
-    <ChildfinderBox
-      data={iconsCopy}
-    />
+    <ChildfinderBox data={iconsCopy} />
   ))
-  .add('Item box with copy and button', () => (
-    <ItemBox data={copyButton} />
-  ))
+  .add('Item box with copy and button', () => <ItemBox data={copyButton} />)
   .add('Item box with title, copy and button', () => (
     <ItemBox data={titleCopyButton} />
   ))

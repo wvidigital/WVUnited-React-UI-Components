@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import globalStyles from '../../../../styles/globalStyles'
-import {textStyles} from "../../../../styles/theme";
+import globalStyles from '../../../../styles/globalStyles';
+import { textStyles } from '../../../../styles/theme';
 
 export default function FieldCheckbox(props) {
   // Create a CheckboxContainer component that will render a <label> element with styles.
@@ -18,7 +18,7 @@ export default function FieldCheckbox(props) {
     -ms-user-select: none;
     user-select: none;
     ${textStyles};
-    
+
     input {
       position: absolute;
       opacity: 0;
@@ -37,9 +37,9 @@ export default function FieldCheckbox(props) {
     width: 40px;
     border-radius: 50%;
     background-color: #d8d8d8;
-  
+
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       left: 14px;
       top: 12px;
@@ -51,8 +51,9 @@ export default function FieldCheckbox(props) {
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
     }
-  
-    ${props.value == 'on' && `
+
+    ${props.value == 'on' &&
+      `
       border-color: ${globalStyles.colors.wvColor};
       background: ${globalStyles.colors.wvColor};
     `}
@@ -69,7 +70,7 @@ export default function FieldCheckbox(props) {
         onChange={props.handleChange}
         disabled={props.settings !== undefined && props.settings.disabled}
       />
-      <Span/>
+      <Span />
     </CheckboxContainer>
   );
 }
@@ -84,7 +85,7 @@ FieldCheckbox.defaultProps = {
     placeholder: '',
     required: false,
     disabled: false,
-    defaultValue: ''
+    defaultValue: '',
   },
 };
 
@@ -96,4 +97,4 @@ FieldCheckbox.propTypes = {
   error: PropTypes.string,
   settings: PropTypes.object,
   handleChange: PropTypes.func,
-}
+};

@@ -1,43 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {textStyles} from '../../../styles/theme';
+import { textStyles } from '../../../styles/theme';
 
 export default function LinkButton(props) {
-
   // Create a LinkButton component that will render a <a> element with styles.
   const LinkButton = styled.a`
-  display: inline-block;
-  padding: 10px 30px 12px;
-  margin-top: 20px;
+    display: inline-block;
+    padding: 10px 30px 12px;
+    margin-top: 20px;
 
-  background: ${props.background};
-  color: ${props.color};
+    background: ${props.background};
+    color: ${props.color};
 
-  transition: all .3s ease;
-  border: 1px solid ${props.background};
-  border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 1px solid ${props.background};
+    border-radius: 5px;
 
-  ${textStyles};
-  line-height: 1;
-  font-weight: 400;
-  text-decoration: none;
-  cursor: pointer;
-
-  &:hover,
-  &:focus,
-  &:active,
-  &:active:focus {
-    border-color: ${props.background};
-    background: ${props.color};
-    color: ${props.background};
+    ${textStyles};
+    line-height: 1;
+    font-weight: 400;
     text-decoration: none;
-    outline: 0;
-  }
-`;
+    cursor: pointer;
 
-  return  (
-    <LinkButton href={props.link} title={props.text}>{props.text}</LinkButton>
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus {
+      border-color: ${props.background};
+      background: ${props.color};
+      color: ${props.background};
+      text-decoration: none;
+      outline: 0;
+    }
+  `;
+
+  return (
+    <LinkButton href={props.link} title={props.text}>
+      {props.text}
+    </LinkButton>
   );
 }
 
@@ -51,4 +52,4 @@ LinkButton.propTypes = {
   link: PropTypes.string.isRequired,
   background: PropTypes.string,
   color: PropTypes.string,
-}
+};

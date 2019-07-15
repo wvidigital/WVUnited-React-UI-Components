@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import 'date-input-polyfill';
 import 'time-input-polyfill/auto';
-import {Field, Label, Error} from '../../FormField/Field';
+import { Field, Label, Error } from '../../FormField/Field';
 
 export default function FieldText(props) {
   // var inputs = [].slice.call( document.querySelectorAll('input[type="time"]') );
@@ -12,7 +12,7 @@ export default function FieldText(props) {
   // })
   return (
     <Field>
-      <Label {...props}/>
+      <Label {...props} />
       <input
         id={props.name}
         name={props.name}
@@ -37,7 +37,7 @@ FieldText.defaultProps = {
     placeholder: '',
     required: false,
     disabled: false,
-    defaultValue: ''
+    defaultValue: '',
   },
 };
 
@@ -49,4 +49,4 @@ FieldText.propTypes = {
   error: PropTypes.string,
   settings: PropTypes.object,
   handleChange: PropTypes.func,
-}
+};

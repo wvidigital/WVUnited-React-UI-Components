@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Field, Label} from "../../FormField/Field";
+import { Field, Label } from '../../FormField/Field';
 
 export default function FieldTextArea(props) {
   // Map default value on first mount.
-  const value = (props.settings.defaultValue) &&
-  (props.settings.defaultValue.length > 0 && props.value === undefined) ?
-    props.settings.defaultValue : props.value;
+  const value =
+    props.settings.defaultValue &&
+    (props.settings.defaultValue.length > 0 && props.value === undefined)
+      ? props.settings.defaultValue
+      : props.value;
 
   return (
     <Field>
-      <Label {...props}/>
+      <Label {...props} />
       <textarea
         id={props.name}
         name={props.name}
@@ -34,7 +36,7 @@ FieldTextArea.defaultProps = {
     placeholder: '',
     required: false,
     disabled: false,
-    defaultValue: ''
+    defaultValue: '',
   },
 };
 
@@ -46,4 +48,4 @@ FieldTextArea.propTypes = {
   error: PropTypes.string,
   settings: PropTypes.object,
   handleChange: PropTypes.func,
-}
+};

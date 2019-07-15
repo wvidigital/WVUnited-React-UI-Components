@@ -8,37 +8,44 @@ import Text from '../Text';
 
 import globalStyles from '../../styles/globalStyles';
 
-
 export default function Sidebar(props) {
   const renderTitle = () => {
     if (props.data.title !== undefined) {
-      return <Heading size={3} font={'Lato'} color ={'#000'}>{props.data.title}</Heading>;
+      return (
+        <Heading size={3} font={'Lato'} color={'#000'}>
+          {props.data.title}
+        </Heading>
+      );
     }
-  }
+  };
 
   const renderDescription = () => {
-    if(props.data.description !== undefined) {
-      return <Text
-        background={'transparent'}
-        size={'20px'}
-      >{props.data.description}</Text>;
+    if (props.data.description !== undefined) {
+      return (
+        <Text background={'transparent'} size={'20px'}>
+          {props.data.description}
+        </Text>
+      );
     }
-  }
+  };
 
-  const renderImage= () => {
-  const image = props.data.image;
+  const renderImage = () => {
+    const image = props.data.image;
     if (image !== undefined) {
-      { return (typeof image === 'string') ?
-        <Image source={image} /> :
-        <Image
-          source={image.source}
-          link={image.link}
-          alt={image.alt}
-          title={image.title}
-        />
+      {
+        return typeof image === 'string' ? (
+          <Image source={image} />
+        ) : (
+          <Image
+            source={image.source}
+            link={image.link}
+            alt={image.alt}
+            title={image.title}
+          />
+        );
       }
     }
-  }
+  };
 
   const Sidebar = styled.div`
     max-width: 300px;
@@ -69,7 +76,6 @@ export default function Sidebar(props) {
       {renderDescription()}
       {renderImage()}
     </Sidebar>
-
   );
 }
 
@@ -82,4 +88,4 @@ Sidebar.propTypes = {
   data: PropTypes.object.isRequired,
   borderColor: PropTypes.string,
   background: PropTypes.string,
-}
+};

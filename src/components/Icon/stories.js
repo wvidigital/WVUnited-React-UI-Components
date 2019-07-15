@@ -1,17 +1,12 @@
 import React from 'react';
-import Icon from "./Icon";
-import Image from "../Image";
-import {boolean, number, text} from "@storybook/addon-knobs";
-import {storiesOf} from "@storybook/react";
-
+import Icon from './Icon';
+import Image from '../Image';
+import { boolean, number, text } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
 
 export const storiesIcon = storiesOf('Icons and images', module);
 storiesIcon
-  .add('Simple icon', () => (
-    <Icon
-      type={text('Type', 'gender')}
-    />
-  ))
+  .add('Simple icon', () => <Icon type={text('Type', 'gender')} />)
   .add('MWV simple icon with text', () => (
     <Icon
       text={text('Label', 'Nice icon label')}

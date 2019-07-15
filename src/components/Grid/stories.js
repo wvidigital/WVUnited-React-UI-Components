@@ -1,15 +1,15 @@
-import React from "react";
-import {storiesOf} from "@storybook/react";
-import {text} from "@storybook/addon-knobs";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { text } from '@storybook/addon-knobs';
 
-
-import Grid from "./Grid";
+import Grid from './Grid';
 
 import {
-  itemsChildfinder, itemsChildfinderResults,
+  itemsChildfinder,
+  itemsChildfinderResults,
   itemsFeed,
-  itemsSlickFeed
-} from "../../../stories/data";
+  itemsSlickFeed,
+} from '../../../stories/data';
 
 export const storiesGrid = storiesOf('Grid', module);
 
@@ -22,13 +22,21 @@ storiesGrid
     />
   ))
   .add('Grid row with slick slider', () => (
-    <Grid items={itemsSlickFeed} direction={text('Direction', 'row')} isSlider />
+    <Grid
+      items={itemsSlickFeed}
+      direction={text('Direction', 'row')}
+      isSlider
+    />
   ))
   .add('Grid row with slick slider (4 items)', () => (
     <Grid items={itemsFeed} direction={text('Direction', 'row')} isSlider />
   ))
   .add('Child finder', () => (
-    <Grid items={itemsChildfinder} direction={text('Direction', 'row')} isSlider />
+    <Grid
+      items={itemsChildfinder}
+      direction={text('Direction', 'row')}
+      isSlider
+    />
   ))
   .add('Child finder with results', () => (
     <Grid

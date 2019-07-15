@@ -2,26 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import globalStyles from '../../../../styles/globalStyles';
-import {textStyles} from "../../../../styles/theme";
+import { textStyles } from '../../../../styles/theme';
 
 export default function FieldRadio(props) {
   /**
-  * Renders the radio options.
-  */
+   * Renders the radio options.
+   */
   function renderOptions() {
     const { data } = props;
 
-    return data.map((option) => {
+    return data.map(option => {
       // Create a RadioOption component that will render a <div> element with styles.
       const RadioOption = styled.div`
         margin: 0 15px;
         padding: 12px 15px;
         
-        ${props.settings.border !== '' && `
+        ${props.settings.border !== '' &&
+          `
           border-bottom: ${props.settings.border};
         `}       
           // Payment methods.
-          ${option.description !== undefined && option.icon !== undefined && props.value === option.value &&`
+          ${option.description !== undefined &&
+            option.icon !== undefined &&
+            props.value === option.value &&
+            `
           background: #f8f8f8;
         `}
 
@@ -36,7 +40,8 @@ export default function FieldRadio(props) {
           -ms-user-select: none;
           user-select: none;
 
-          ${option.description !== undefined && `
+          ${option.description !== undefined &&
+            `
             font-size: 20px;
           `}
               
@@ -56,7 +61,9 @@ export default function FieldRadio(props) {
           }
   
           // Align labels only when no description & image are provided.
-          ${option.description === undefined && option.image === undefined && `
+          ${option.description === undefined &&
+            option.image === undefined &&
+            `
             line-height: 42px;
           `}
   
@@ -85,9 +92,9 @@ export default function FieldRadio(props) {
         z-index: 1;
         border-radius: 50%;
         background-color: #d8d8d8;
-      
+
         &:after {
-          content: "";
+          content: '';
           position: absolute;
           left: 14px;
           top: 12px;
@@ -99,12 +106,13 @@ export default function FieldRadio(props) {
           -ms-transform: rotate(45deg);
           transform: rotate(45deg);
         }
-    
-      ${props.value === option.value && `
+
+        ${props.value === option.value &&
+          `
         border-color: ${globalStyles.colors.wvColor};
         background: ${globalStyles.colors.wvColor};
       `}
-    `;
+      `;
 
       return (
         <RadioOption key={option.value}>
@@ -119,7 +127,7 @@ export default function FieldRadio(props) {
               value={option.value}
               onChange={props.handleChange}
             />
-            <Span/>
+            <Span />
           </label>
         </RadioOption>
       );
@@ -135,11 +143,7 @@ export default function FieldRadio(props) {
     text-align: center;
   `;
 
-  return (
-    <RadioContainer>
-      {renderOptions()}
-    </RadioContainer>
-  )
+  return <RadioContainer>{renderOptions()}</RadioContainer>;
 }
 
 FieldRadio.defaultProps = {
@@ -152,8 +156,8 @@ FieldRadio.defaultProps = {
       label: '',
       description: '',
       value: '',
-      image: ''
-    }
+      image: '',
+    },
   ],
   settings: {
     errorMessage: '',
@@ -161,7 +165,7 @@ FieldRadio.defaultProps = {
     required: false,
     defaultValue: '',
     direction: 'row',
-    border: ''
+    border: '',
   },
 };
 
@@ -174,4 +178,4 @@ FieldRadio.propTypes = {
   data: PropTypes.array,
   settings: PropTypes.object,
   handleChange: PropTypes.func,
-}
+};

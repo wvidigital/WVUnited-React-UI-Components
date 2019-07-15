@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {iconContentStyles} from '../../styles/theme';
+import { iconContentStyles } from '../../styles/theme';
 
 function iconSize(props) {
   switch (props.size) {
@@ -18,22 +18,20 @@ function iconSize(props) {
       return 'normal';
       break;
   }
-};
-
+}
 
 export default function Icon(props) {
-
   // Create a Icon component that will render a <p> element with styles.
   const Icon = styled.div`
   &.mwv-icon {
     display: flex;
-    flex-direction: ${(props.text && props.inline) ? 'row' : 'column'};
+    flex-direction: ${props.text && props.inline ? 'row' : 'column'};
     align-items: center;
     justify-content: center;
     
     ${iconContentStyles};
     .mwv-icon-content {
-      margin-${(props.text && props.inline) ? 'right' : 'bottom'}: 6px;
+      margin-${props.text && props.inline ? 'right' : 'bottom'}: 6px;
   
       &:before {
        color: ${props.color};
@@ -64,7 +62,7 @@ export default function Icon(props) {
     
     border-radius: 50%;
     background-color: ${props.background};
-    border: ${(props.border)? `1px solid ${props.color}`: 'none'};
+    border: ${props.border ? `1px solid ${props.color}` : 'none'};
   }
   
   &.with-background.normal .mwv-icon-content {
@@ -74,16 +72,22 @@ export default function Icon(props) {
   &.with-background.big .mwv-icon-content {
     width: 60px;
     height: 60px;
-    border: ${(props.border) ? `3px solid ${props.color}`: 'none'};    
+    border: ${props.border ? `3px solid ${props.color}` : 'none'};    
   }
 }
   
 `;
 
-  return  (
-    <Icon className={`mwv-icon ${iconSize(props)} ${(props.background !== '') ? 'with-background' : ''}`}>
-      <span className={`mwv-icon-content mwv-icon-content-${props.type}`}></span>
-      { (props.text) ? <span className='mwv-icon-label'>{props.text}</span> : null }
+  return (
+    <Icon
+      className={`mwv-icon ${iconSize(props)} ${
+        props.background !== '' ? 'with-background' : ''
+      }`}
+    >
+      <span
+        className={`mwv-icon-content mwv-icon-content-${props.type}`}
+      ></span>
+      {props.text ? <span className="mwv-icon-label">{props.text}</span> : null}
     </Icon>
   );
 }
@@ -104,6 +108,4 @@ Icon.propTypes = {
   size: PropTypes.number,
   inline: PropTypes.bool,
   border: PropTypes.bool,
-}
-
-
+};
