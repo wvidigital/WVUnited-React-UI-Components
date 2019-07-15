@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Slider from "react-slick";
+import Slider from 'react-slick';
 
 // Styles for the slick slider.
 import 'slick-carousel/slick/slick.css';
@@ -9,25 +9,22 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import Icon from '../Icon';
 import ItemBox from '../ItemBox';
-import {textStyles} from '../../styles/theme';
+import { textStyles } from '../../styles/theme';
 
 export default function Grid(props) {
-
   const iconProps = {
     size: 3,
     background: 'transparent',
     color: '#fff',
     border: true,
-  }
+  };
 
   function NextArrow(props) {
     const { className, onClick } = props;
     return (
       <div className={className} onClick={onClick}>
-        <Icon
-          type={'arrow-right'}
-          {...iconProps}
-        /></div>
+        <Icon type={'arrow-right'} {...iconProps} />
+      </div>
     );
   }
 
@@ -35,10 +32,8 @@ export default function Grid(props) {
     const { className, onClick } = props;
     return (
       <div className={className} onClick={onClick}>
-        <Icon
-          type={'arrow-left'}
-          {...iconProps}
-        /></div>
+        <Icon type={'arrow-left'} {...iconProps} />
+      </div>
     );
   }
 
@@ -52,30 +47,34 @@ export default function Grid(props) {
     centerPadding: '50px',
     initialSlide: 1,
 
-    nextArrow: <NextArrow/>,
-    prevArrow: <PrevArrow/>,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
 
-    responsive: [{
-      breakpoint: 1080, // iPhone and Galaxy portrait
-      settings: {
-        slidesToShow: 2,
-      }
-    }, {
-      breakpoint: 640, // iPhone 4s
-      settings: {
-        slidesToShow: 1,
-      }
-    }, {
-      breakpoint: 300,
-      settings: "unslick" // destroys slick
-    }]
+    responsive: [
+      {
+        breakpoint: 1080, // iPhone and Galaxy portrait
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640, // iPhone 4s
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 300,
+        settings: 'unslick', // destroys slick
+      },
+    ],
   };
 
-  let rightArrowPositionPx = props.width/2 - 44;
+  let rightArrowPositionPx = props.width / 2 - 44;
 
   // Create a Grid component that will render a <div> element with styles.
   const Grid = styled.div`  
-  display: ${(props.isSlider)} ? 'flex' : 'block';
+  display: ${props.isSlider} ? 'flex' : 'block';
   flex-direction: ${props.direction};
   flex-wrap: wrap;  
   justify-content: space-evenly;
@@ -110,7 +109,7 @@ export default function Grid(props) {
   
   .slick-prev,
   .slick-next {
-    left: calc(50% - ${props.width/2}px);
+    left: calc(50% - ${props.width / 2}px);
     width: 44px;
     height: 100%;
     z-index: 2;
@@ -130,7 +129,9 @@ export default function Grid(props) {
       height: 100%;
       opacity: 1;
       content: '';
-      background-image: linear-gradient(to left, transparent, ${props.background} 100%);
+      background-image: linear-gradient(to left, transparent, ${
+        props.background
+      } 100%);
     }
     
     .mwv-icon {
@@ -159,7 +160,9 @@ export default function Grid(props) {
     }
     
     &:before {      
-      background-image: linear-gradient(to right, transparent, ${props.background} 100%);
+      background-image: linear-gradient(to right, transparent, ${
+        props.background
+      } 100%);
     }
         
     .mwv-icon {
@@ -204,4 +207,4 @@ Grid.propTypes = {
   width: PropTypes.string,
   background: PropTypes.string,
   color: PropTypes.string,
-}
+};

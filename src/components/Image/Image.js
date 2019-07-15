@@ -6,15 +6,9 @@ export default function Image(props) {
   // Create a Image component that will render a <img> element with styles.
   const Image = styled.img`
     display: block;
-`;
+  `;
 
-  return  (
-    <Image
-      src={props.source}
-      alt={props.alt}
-      title={props.title}
-    />
-  );
+  return <Image src={props.source} alt={props.alt} title={props.title} />;
 }
 
 Image.propTypes = {
@@ -22,6 +16,4 @@ Image.propTypes = {
   link: PropTypes.string,
   title: PropTypes.string,
   alt: PropTypes.string,
-}
-
-
+};

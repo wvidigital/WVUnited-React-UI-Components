@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Field, Label, Error} from '../../FormField/Field';
+import { Field, Label, Error } from '../../FormField/Field';
 
 export default class FieldFileUpload extends React.Component {
   constructor(props) {
@@ -21,11 +21,10 @@ export default class FieldFileUpload extends React.Component {
     }
   }
 
-
   render() {
     return (
-      <Field style={{position: 'relative'}}>
-        <Label {...this.props}/>
+      <Field style={{ position: 'relative' }}>
+        <Label {...this.props} />
         {/*File upload input- used for actual upload, but visually hidden*/}
         <input
           id={this.props.name}
@@ -38,12 +37,14 @@ export default class FieldFileUpload extends React.Component {
         <input
           id={`${this.props.name}_text`}
           name={this.props.name}
-          type='text'
+          type="text"
           value={this.props.value}
           placeholder={this.props.settings.placeholder}
-          disabled='disabled'
+          disabled="disabled"
         />
-        <label htmlFor={this.props.name}>{this.props.settings.chooseFileButton}</label>
+        <label htmlFor={this.props.name}>
+          {this.props.settings.chooseFileButton}
+        </label>
 
         {this.props.error && <Error>{this.props.error}</Error>}
       </Field>
@@ -61,7 +62,7 @@ FieldFileUpload.defaultProps = {
     placeholder: '',
     required: false,
     disabled: true,
-    defaultValue: ''
+    defaultValue: '',
   },
 };
 
@@ -73,4 +74,4 @@ FieldFileUpload.propTypes = {
   error: PropTypes.string,
   settings: PropTypes.object,
   handleChange: PropTypes.func,
-}
+};

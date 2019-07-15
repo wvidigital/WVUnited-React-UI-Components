@@ -2,22 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import globalStyles from '../../../../styles/globalStyles';
-import {textStyles} from "../../../../styles/theme";
+import { textStyles } from '../../../../styles/theme';
 
 export default function FieldDollarHandles(props) {
   /**
-  * Renders the radio options.
-  */
+   * Renders the radio options.
+   */
   function renderOptions() {
     const { data } = props;
-    const occurrenceKey = (props.settings.occurrence) ?
-      props.settings.occurrence : Object.keys(data)[0];
+    const occurrenceKey = props.settings.occurrence
+      ? props.settings.occurrence
+      : Object.keys(data)[0];
 
-    return data[occurrenceKey].options.map((option) => {
+    return data[occurrenceKey].options.map(option => {
       // Create a RadioOption component that will render a <div> element with styles.
       const RadioOption = styled.div`
         margin: 0 10px;
-        
+
         label {
           position: relative;
           display: block;
@@ -30,13 +31,14 @@ export default function FieldDollarHandles(props) {
           ${textStyles};
           font-weight: bold;
           font-weight: bold;
-          
-          ${parseInt(props.value) === option.value && `
+
+          ${parseInt(props.value) === option.value &&
+            `
             border-color: ${globalStyles.colors.wvColor};
             background: ${globalStyles.colors.wvColor};
             color: #fff;
          `}
-            
+
           input {
             position: absolute;
             top: 0;
@@ -75,11 +77,7 @@ export default function FieldDollarHandles(props) {
     text-align: center;
   `;
 
-  return (
-    <RadioContainer>
-      {renderOptions()}
-    </RadioContainer>
-  )
+  return <RadioContainer>{renderOptions()}</RadioContainer>;
 }
 
 FieldDollarHandles.defaultProps = {
@@ -92,7 +90,7 @@ FieldDollarHandles.defaultProps = {
       image: '',
       label: '',
       text: '',
-      value: ''
+      value: '',
     },
   },
   settings: {
@@ -100,7 +98,7 @@ FieldDollarHandles.defaultProps = {
     placeholder: '',
     required: false,
     defaultValue: '',
-    occurrence: ''
+    occurrence: '',
   },
 };
 
@@ -113,4 +111,4 @@ FieldDollarHandles.propTypes = {
   data: PropTypes.array,
   settings: PropTypes.object,
   handleChange: PropTypes.func,
-}
+};

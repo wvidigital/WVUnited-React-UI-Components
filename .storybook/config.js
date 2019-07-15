@@ -1,17 +1,20 @@
 import { configure, addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import {withKnobs} from "@storybook/addon-knobs";
+import { withKnobs } from '@storybook/addon-knobs';
 
-import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import {withBackgrounds} from "@storybook/addon-backgrounds";
+import {
+  configureViewport,
+  INITIAL_VIEWPORTS,
+} from '@storybook/addon-viewport';
+import { withBackgrounds } from '@storybook/addon-backgrounds';
 
 // Backgrounds decorator.
 const backgrounds = withBackgrounds([
-  { name: 'white' , value: '#ffffff', default: true },
-  { name: 'mwv grey' , value: '#efefef' },
+  { name: 'white', value: '#ffffff', default: true },
+  { name: 'mwv grey', value: '#efefef' },
   { name: 'mwv orange', value: '#ff6600' },
   { name: 'mwv blue', value: '#00acca' },
-  { name: 'child finder' , value: '#CAC4BB'},
+  { name: 'child finder', value: '#CAC4BB' },
   { name: 'twitter', value: '#00aced' },
   { name: 'facebook', value: '#3b5998' },
 ]);
@@ -24,11 +27,9 @@ addDecorator(withKnobs);
 // Load the list of viewports.
 configureViewport({
   viewports: {
-    ...INITIAL_VIEWPORTS
-  }
+    ...INITIAL_VIEWPORTS,
+  },
 });
-
-
 
 function loadStories() {
   require('../stories/index.js');
