@@ -13,7 +13,7 @@ export const Field = styled.div`
 `;
 
 export function Label(props) {
-  const Label = styled.span`
+  const Label = styled.label`
   // Styles for the subsequent fields.
   &~ select,
   &~ input,
@@ -45,6 +45,26 @@ export function Label(props) {
       resize: vertical;
   }
   
+  // File upload
+  &~ input[type="file"] {
+    display: none;
+    
+    // Choose file button
+    ~ label {
+      position: absolute;
+      right: 0;
+      top: 27px; // If error messages are next to the label (instead of below the input), then this should be bottom positioned.
+      width: auto;
+      padding: 11px 10px 12px;
+      border: 1px solid ${globalStyles.colors.wvColor};
+      border-radius: 0 5px 5px 0;
+      background-color: ${globalStyles.colors.wvColor};
+      color: #fff;
+      cursor: pointer;
+      cursor: pointer;
+    }
+  }
+  
  ${props.settings.required && `
       &~ select,
       &~ input {
@@ -60,10 +80,15 @@ export function Label(props) {
       }`
     }
     
+    
+    &~ input:disabled {
+      color: #888;
+    }
+    
    ${props.settings.disabled && `
       &~ select,
       &~ input,
-      &~ textarea {          
+      &~ textarea {
         color: #888;
         cursor: not-allowed;
       }`
@@ -81,5 +106,6 @@ export function Label(props) {
 }
 
 export const Error = styled.div`
+    margin-bottom: 8px;
     color: ${globalStyles.colors.errorColor};
 `;

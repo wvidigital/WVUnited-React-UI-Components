@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import globalStyles from '../../../../styles/globalStyles'
+import {textStyles} from "../../../../styles/theme";
 
 export default function FieldCheckbox(props) {
   // Create a CheckboxContainer component that will render a <label> element with styles.
@@ -16,6 +17,7 @@ export default function FieldCheckbox(props) {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    ${textStyles};
     
     input {
       position: absolute;

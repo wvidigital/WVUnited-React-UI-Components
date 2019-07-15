@@ -16,6 +16,7 @@ export { default as FieldRadio } from './Form/Fields/FieldRadio';
 export { default as FieldDollarHandles } from './Form/Fields/FieldDollarHandles';
 export { default as FieldCheckbox } from './Form/Fields/FieldCheckbox';
 export { default as FieldTextArea } from './Form/Fields/FieldTextArea';
+export { default as FieldFileUpload } from './Form/Fields/FieldFileUpload';
 export { default as FormField } from './Form/FormField';
 
 export { default as FormHeader } from './Form/FormHeader';

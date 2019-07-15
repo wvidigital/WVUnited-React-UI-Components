@@ -10,8 +10,6 @@ import globalStyles from '../../styles/globalStyles';
 
 
 export default function Sidebar(props) {
-console.error(props.data)
-
   const renderTitle = () => {
     if (props.data.title !== undefined) {
       return <Heading size={3} font={'Lato'} color ={'#000'}>{props.data.title}</Heading>;

@@ -202,8 +202,8 @@ export const selectFieldErrorProps = {
     name: 'field_select_child_gender',
     required: false,
   },
+  error: 'This field is required.',
   fieldState: {
-    errorMessages: ['This field is required.'],
     name: 'field_select_child_gender',
     required: true,
     value: '',

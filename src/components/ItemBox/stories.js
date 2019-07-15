@@ -14,17 +14,17 @@ import {
 import ChildfinderBox from "../ChildfinderBox";
 import {text} from "@storybook/addon-knobs";
 
-const childFinderBoxCopy =  {
-  description: text('description', '14-year-old männlich'),
-  birthdate: text('birthdate','01.01.2005'),
-  button: {
-    text: text('button text','Mehr erfahren'),
-  },
-  country: text('country',"Malawi"),
-  image: text('image', "https://cdn.pixabay.com/photo/2016/09/01/10/23/image-1635747_960_720.jpg"),
-  name: text('name',"Tenson"),
-  waiting: text('waiting', "Waiting 10 Monaten"),
-};
+// const childFinderBoxCopy =  {
+//   description: text('description', '14-year-old männlich'),
+//   birthdate: text('birthdate','01.01.2005'),
+//   button: {
+//     text: text('button text','Mehr erfahren'),
+//   },
+//   country: text('country',"Malawi"),
+//   image: text('image', "https://cdn.pixabay.com/photo/2016/09/01/10/23/image-1635747_960_720.jpg"),
+//   name: text('name',"Tenson"),
+//   waiting: text('waiting', "Waiting 10 Monaten"),
+// };
 
 const iconsCopy = {
   icons: [

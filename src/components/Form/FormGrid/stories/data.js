@@ -24,12 +24,12 @@ export const selectFieldProps = {
     maxLength: 20,
     errorMessage: "The field should not exceed @maxLength characters DE",
   },
-  handleChange: (name, value) => handleFieldChange(name, value),
+  handleChange: (event) => handleEventFieldChange(event),
 }
 
 export const selectFieldErrorProps = {
   ...selectFieldProps,
-  formGridErrorMessage: 'Oops I did it again.',
+  error: 'Oops I did it again.',
 }
 
 
@@ -46,8 +46,33 @@ export const textFieldProps = {
     maxLength: 20,
     errorMessage: "The field should not exceed @maxLength characters DE",
   },
-  handleChange: (name, value) => handleFieldChange(name, value),
-  handleVisibility: (name, value) => handleFieldVisibility(name, value),
+  handleChange: (event) => handleEventFieldChange(event),
+}
+
+
+export const datepickerFieldProps = {
+  name: 'field_birthdate',
+  label: 'Birthday',
+  type: 'date',
+  value: '',
+  settings: {
+    required: true,
+    defaultValue: '12/06/1990',
+    errorMessage: "The field should not exceed @maxLength characters DE",
+  },
+  handleChange: (event) => handleEventFieldChange(event),
+}
+
+
+export const timepickerFieldProps = {
+  name: 'field_time',
+  label: 'Event time',
+  type: 'time',
+  value: '',
+  settings: {
+    required: true,
+  },
+  handleChange: (event) => handleEventFieldChange(event),
 }
 
 export const textFieldErrorProps = {
@@ -55,6 +80,28 @@ export const textFieldErrorProps = {
   error: 'Bitte auswahlen',
 }
 
+
+
+export const fileUploadFieldProps = {
+  name: 'field_photo_upload',
+  label: 'Bild',
+  type: 'file',
+  value: 'test.jpg',
+  settings: {
+    maxFileSize: 2097152,
+    fileExtensions: [
+      '.png',
+      '.jpg',
+    ],
+    required: true,
+    placeholder: 'Lade ein Foto hoch',
+    chooseFileButton: 'Select file',
+    replaceFileButton: 'Replace file',
+    errorMessage: " besitzt kein gültiges Format. Du kannst ein Foto als .png, .gif, .jpg hochladen, mit einer maximalen Größe von 2 MB.",
+  },
+  error: 'Bitte auswahlen',
+  handleChange: (event) => handleEventFieldChange(event),
+}
 
 export const radioFieldProps = {
   name: 'field_radio',
@@ -77,9 +124,63 @@ export const radioFieldProps = {
   handleChange: (event) => handleEventFieldChange(event),
 }
 
+export const radioDescriptionFieldProps = {
+  name: 'field_radio_widget',
+  type: 'radio',
+  data: [
+    {
+      label: 'One-Time Gift',
+      value: 'ONCE',
+      description: 'Danish chupa chups lollipop soufflé cake cookie candy carrot cake chocolate cake. Icing jelly beans marzipan sweet marzipan sesame snaps topping candy canes.'
+    },
+    {
+      label: 'Monthly',
+      value: 'MONTH',
+      description: 'Muffin jelly beans ice cream.'
+    },
+  ],
+  value: 'MONTH',
+  label: 'Radio field',
+  handleChange: (event) => handleEventFieldChange(event),
+}
+
+export const radioDescriptionImageFieldProps = {
+  name: 'field_radio_payments',
+  type: 'radio',
+  data: [
+    {
+      label: 'SEPA',
+      value: 'field_sepa',
+      description: "Zahlen Sie bequem per Lastschrift-Einzug.",
+      icon: 'http://local.worldvision.com/sites/worldvision.de/files/mwv/icon-sepa_1.png'
+    },
+    {
+      card_types: {V: "V", M: "M", A: 0},
+      description: "Zahlen Sie bequem per Kreditkarte.",
+      icon: "http://local.worldvision.com/sites/worldvision.de/files/mwv/icon-credit-card.png",
+      label: "Kreditkarte",
+      value: "field_credit_card"
+    },
+    {
+      description: "Zahlen Sie schnell und einfach per PayPal.",
+      icon: "http://local.worldvision.com/sites/worldvision.de/files/mwv/icon-paypal.png",
+      label: "PayPal",
+      value: "field_paypal"
+    }
+  ],
+  value: 'field_paypal',
+  label: 'Radio field',
+  settings: {
+    disabled: true,
+    border: '2px solid #d3d3d3',
+    direction: 'column'
+  },
+  handleChange: (event) => handleEventFieldChange(event),
+}
+
 export const radioFieldErrorProps = {
   ...radioFieldProps,
-  formGridErrorMessage: 'Field is required',
+  error: 'Field is required',
 }
 
 export const dollarHandlesFieldProps = {
@@ -145,7 +246,6 @@ export const dollarHandlesFieldProps = {
 }
 
 
-
 export const checkboxFieldProps = {
   name: 'field_checkbox',
   type: 'checkbox',
@@ -164,7 +264,7 @@ export const checkboxFieldProps = {
 export const checkboxFieldErrorProps = {
   ...checkboxFieldProps,
   fieldState: {value: ''},
-  formGridErrorMessage: 'Field is required',
+  error: 'Field is required',
 }
 
 
@@ -181,7 +281,7 @@ export const numberFieldProps = {
 
 export const numberFieldErrorProps = {
   ...numberFieldProps,
-  formGridErrorMessage: 'Oops let me validate this..',
+  error: 'Oops let me validate this..',
 }
 
 
@@ -205,7 +305,7 @@ export const textareaFieldProps = {
 
 export const textareaFieldErrorProps = {
   ...textareaFieldProps,
-  formGridErrorMessage: 'Oops let me validate this..',
+  error: 'Oops let me validate this..',
 }
 
 

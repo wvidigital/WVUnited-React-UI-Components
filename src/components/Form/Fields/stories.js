@@ -15,14 +15,21 @@ import {
   textareaFieldProps,
   textareaFieldErrorProps,
   dollarHandlesFieldProps,
+  fileUploadFieldProps,
+  datepickerFieldProps,
+  timepickerFieldProps,
+  radioDescriptionFieldProps,
+  radioDescriptionImageFieldProps
 } from "../FormGrid/stories/data";
 
-import FormField from "../FormField";
+
 import FieldText from "./FieldText";
 import FieldRadio from "./FieldRadio";
 import FieldSelect from "./FieldSelect";
 import FieldCheckbox from "./FieldCheckbox";
 import FieldDollarHandles from "./FieldDollarHandles";
+import FieldTextArea from "./FieldTextArea";
+import FieldFileUpload from "./FieldFileUpload";
 
 export const storiesFormFields = storiesOf('Form fields', module);
 
@@ -31,19 +38,25 @@ storiesFormFields
     <FieldSelect { ...selectFieldProps} />
   ))
   .add('Select with validation error', () => (
-    <FormField { ...selectFieldErrorProps} />
+    <FieldSelect { ...selectFieldErrorProps} />
   ))
   .add('Text', () => (
     <FieldText { ...textFieldProps} />
   ))
   .add('Text with validation error', () => (
-    <FormField { ...textFieldErrorProps} />
+    <FieldText { ...textFieldErrorProps} />
   ))
   .add('Radio', () => (
     <FieldRadio { ...radioFieldProps } />
   ))
+  .add('Radio with description', () => (
+    <FieldRadio { ...radioDescriptionFieldProps } />
+  ))
+  .add('Radio with description and image', () => (
+    <FieldRadio { ...radioDescriptionImageFieldProps } />
+  ))
   .add('Radio with validation error', () => (
-    <FormField { ...radioFieldErrorProps } />
+    <FieldRadio { ...radioFieldErrorProps } />
   ))
   .add('Dollar Handles', () => (
     <FieldDollarHandles { ...dollarHandlesFieldProps } />
@@ -52,17 +65,26 @@ storiesFormFields
     <FieldCheckbox { ...checkboxFieldProps } />
   ))
   .add('Checkbox with validation error', () => (
-    <FormField { ...checkboxFieldErrorProps } />
+    <FieldCheckbox { ...checkboxFieldErrorProps } />
   ))
   .add('Number', () => (
     <FieldText { ...numberFieldProps } />
   ))
   .add('Number with validation error', () => (
-    <FormField { ...numberFieldErrorProps } />
+    <FieldText { ...numberFieldErrorProps } />
   ))
   .add('Text area', () => (
-    <FormField { ...textareaFieldProps } />
+    <FieldTextArea { ...textareaFieldProps } />
   ))
   .add('Text area with validation error', () => (
-    <FormField { ...textareaFieldErrorProps } />
+    <FieldTextArea { ...textareaFieldErrorProps } />
+  ))
+  .add('File upload', () => (
+    <FieldFileUpload { ...fileUploadFieldProps } />
+  ))
+  .add('Date picker', () => (
+    <FieldText { ...datepickerFieldProps } />
+  ))
+  .add('Time picker', () => (
+    <FieldText { ...timepickerFieldProps } />
   ));
