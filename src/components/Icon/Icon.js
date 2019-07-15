@@ -84,9 +84,7 @@ export default function Icon(props) {
         props.background !== '' ? 'with-background' : ''
       }`}
     >
-      <span
-        className={`mwv-icon-content mwv-icon-content-${props.type}`}
-      ></span>
+      <span className={`mwv-icon-content mwv-icon-content-${props.type}`} />
       {props.text ? <span className="mwv-icon-label">{props.text}</span> : null}
     </Icon>
   );

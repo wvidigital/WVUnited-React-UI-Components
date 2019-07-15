@@ -25,7 +25,7 @@ export default function Text(props) {
 
   return (
     <Text>
-      <span dangerouslySetInnerHTML={{ __html: props.children }}></span>
+      <span dangerouslySetInnerHTML={{ __html: props.children }} />
     </Text>
   );
 }
