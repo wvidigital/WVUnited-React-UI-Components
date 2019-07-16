@@ -5,11 +5,6 @@ import 'time-input-polyfill/auto';
 import { Field, Label, Error } from '../../FormField/Field';
 
 export default function FieldText(props) {
-  // var inputs = [].slice.call( document.querySelectorAll('input[type="time"]') );
-  // inputs.forEach(function($input){
-  //   console.log('text', props.type, inputs)
-  //   new TimePolyfill($input);
-  // })
   return (
     <Field>
       <Label {...props} />
