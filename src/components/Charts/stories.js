@@ -2,12 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select, text, array, number } from '@storybook/addon-knobs';
 
-import Charts from './Charts';
+import Doughnut from './Doughnut';
 
 export const storiesCharts = storiesOf('Charts', module);
 
 storiesCharts.add('Doghnut', () => (
-  <Charts
+  <Doughnut
     labels={array('Labels', [
       'Livelihoods',
       'Health',

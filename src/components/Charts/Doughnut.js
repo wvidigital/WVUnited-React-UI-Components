@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Doughnut } from 'react-chartjs-2';
+import { Doughnut as ChartJSDoughnut } from 'react-chartjs-2';
 
-export default function Charts(props) {
+export default function Doughnut(props) {
   const data = {
     datasets: [
       {
@@ -25,12 +25,12 @@ export default function Charts(props) {
 
   return (
     <div>
-      <Doughnut data={data} options={data.options} />
+      <ChartJSDoughnut data={data} options={data.options} />
     </div>
   );
 }
 
-Charts.defaultProps = {
+Doughnut.defaultProps = {
   values: [31, 30, 15, 10, 7, 4, 3],
   labels: [
     'Livelihoods',
@@ -62,7 +62,7 @@ Charts.defaultProps = {
   legendPosition: 'top',
 };
 
-Charts.propTypes = {
+Doughnut.propTypes = {
   values: PropTypes.array,
   labels: PropTypes.array,
   colors: PropTypes.array,
