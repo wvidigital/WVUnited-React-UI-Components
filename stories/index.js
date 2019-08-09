@@ -9,6 +9,7 @@ import { storiesFormFields } from '../src/components/Form/Fields/stories';
 import { storiesFormGrid } from '../src/components/Form/FormGrid/stories';
 import { storiesItemBox } from '../src/components/ItemBox/stories';
 import { storiesGrid } from '../src/components/Grid/stories';
+import { storiesCharts } from '../src/components/Charts/stories';
 
 storiesText;
 storiesButton;
@@ -17,6 +18,7 @@ storiesFormFields;
 storiesFormGrid;
 storiesItemBox;
 storiesGrid;
+storiesCharts;
 
 storiesOf('Information', module).add('Current versions', () => (
   <div>
