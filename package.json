@@ -3,10 +3,20 @@
   "version": "0.0.16",
   "description": "React component library for WVI",
   "main": "src/dist/ui.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wvidigital/WVUnited-React-UI-Components.git"
+  },
+  "author": "Rossi Ivanova",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wvidigital/WVUnited-React-UI-Components/issues"
+  },
+  "homepage": "https://github.com/wvidigital/WVUnited-React-UI-Components#readme",
   "scripts": {
     "build": "webpack --config src/ui.config.js --mode=production",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy": "storybook-to-ghpages"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -43,15 +53,5 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.1.3",
     "time-input-polyfill": "^1.0.6"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wvidigital/WVUnited-React-UI-Components.git"
-  },
-  "author": "Rossi Ivanova",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/wvidigital/WVUnited-React-UI-Components/issues"
-  },
-  "homepage": "https://github.com/wvidigital/WVUnited-React-UI-Components#readme"
+  }
 }
