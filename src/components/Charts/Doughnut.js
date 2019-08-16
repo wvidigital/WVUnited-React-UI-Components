@@ -59,7 +59,7 @@ Doughnut.defaultProps = {
   ],
   borderWidth: 2,
   borderColor: '#fff',
-  legendPosition: 'top',
+  legendPosition: 'right',
 };
 
 Doughnut.propTypes = {
