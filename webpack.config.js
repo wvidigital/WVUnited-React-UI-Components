@@ -1,12 +1,13 @@
-const path = require('path');
-
 module.exports = {
   entry: './src/index.js',
+  // Development mode here allows us to better debug components at the consumer
+  // apps, where they are supposed to be minified.
+  mode: 'development',
   module: {
     rules: [
       {
         test: /\.js$/,
-        exclude: [/node_modules/],
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -41,9 +42,8 @@ module.exports = {
     ],
   },
   output: {
-    path: path.resolve(__dirname, 'dist/'),
-    publicPath: '',
-    filename: 'ui.js',
-    libraryTarget: 'umd',
+    path: `${__dirname}/build`,
+    filename: 'index.js',
+    libraryTarget: 'commonjs2',
   },
 };
