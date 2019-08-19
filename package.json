@@ -15,8 +15,9 @@
   "homepage": "https://github.com/wvidigital/WVUnited-React-UI-Components#readme",
   "scripts": {
     "build": "webpack",
-    "storybook": "start-storybook -p 9001 -c .storybook",
-    "deploy": "storybook-to-ghpages"
+    "deploy": "storybook-to-ghpages",
+    "dev": "webpack --watch",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
