@@ -1,3 +1,3 @@
-import Doughnuts from './Doughnuts';
+import Doughnut from './Doughnut';
 
-export default Charts;
+export default Doughnut;

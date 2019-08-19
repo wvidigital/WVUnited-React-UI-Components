@@ -4,6 +4,7 @@ export { default as Heading } from './Heading';
 export { default as TextLink } from './Button/TextLink';
 export { default as LinkButton } from './Button/LinkButton';
 export { default as ActionButton } from './Button/ActionButton';
+export { default as Doughnut } from './Charts/Doughnut';
 export { default as Icon } from './Icon';
 export { default as Image } from './Image';
 export { default as ItemBox } from './ItemBox';
