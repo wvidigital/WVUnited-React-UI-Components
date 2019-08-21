@@ -2,7 +2,7 @@
   "name": "@worldvision/ui-components",
   "version": "0.0.16",
   "description": "React component library for WVI",
-  "main": "src/dist/ui.js",
+  "main": "build",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wvidigital/WVUnited-React-UI-Components.git"
