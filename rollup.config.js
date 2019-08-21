@@ -58,6 +58,8 @@ export default [
       dir: 'build',
     },
   },
+  // This is temporary and to be removed once all previous components has been updated
+  // https://github.com/wvidigital/WVUnited-React-UI-Components/issues/15
   {
     ...defaultConfig,
     input: 'src/prev/index.js',
