@@ -17,7 +17,7 @@
     "build": "webpack",
     "deploy": "storybook-to-ghpages",
     "dev": "webpack --watch",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
