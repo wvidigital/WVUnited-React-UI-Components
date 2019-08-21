@@ -1,34 +1,32 @@
 // Default theme
 export { breakpoints, default as theme } from './theme';
 
-// All exposed UI components
-export { default as Text } from './components/Text';
-export { default as Heading } from './components/Heading';
-export { default as TextLink } from './components/Button/TextLink';
-export { default as LinkButton } from './components/Button/LinkButton';
-export { default as ActionButton } from './components/Button/ActionButton';
-export { default as Doughnut } from './components/Charts/Doughnut';
-export { default as Icon } from './components/Icon';
+// UI components
+export { default as ActionButton } from './components/ActionButton';
+export { default as ActionButtonText } from './components/ActionButtonText';
+export { default as Bubble } from './components/Bubble';
+export { default as Button } from './components/Button';
+export { default as Card } from './components/Card';
+export { default as Doughnut } from './components/Doughnut';
+export { default as Flex } from './components/Flex';
+export { default as Grid } from './components/Grid';
+export {
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  default as Heading,
+} from './components/Heading';
+export { default as HorizontalLine } from './components/HorizontalLine';
+export { default as IconButton } from './components/IconButton';
 export { default as Image } from './components/Image';
-// export { default as ItemBox } from './components/ItemBox';
-export { default as Sidebar } from './components/Sidebar';
-// export { default as Grid } from './components/Grid';
-// export { default as FieldSelect } from './components/Form/Fields/FieldSelect';
-// export { default as FieldText } from './components/Form/Fields/FieldText';
-export { default as FieldRadio } from './components/Form/Fields/FieldRadio';
-export {
-  default as FieldDollarHandles,
-} from './components/Form/Fields/FieldDollarHandles';
-export {
-  default as FieldCheckbox,
-} from './components/Form/Fields/FieldCheckbox';
-export {
-  default as FieldTextArea,
-} from './components/Form/Fields/FieldTextArea';
-// export {
-//   default as FieldFileUpload,
-// } from './components/Form/Fields/FieldFileUpload';
-// export { default as FormField } from './components/Form/FormField';
-
-export { default as FormHeader } from './components/Form/FormHeader';
-export { default as FormNavigation } from './components/Form/FormNavigation';
+export { default as Link } from './components/Link';
+export { default as LoadingIndicator } from './components/LoadingIndicator';
+export { default as Note } from './components/Note';
+export { default as Select } from './components/Select';
+export { default as Section } from './components/Section';
+export { default as Spinner } from './components/Spinner';
+export { default as Tag } from './components/Tag';
+export { default as Text } from './components/Text';

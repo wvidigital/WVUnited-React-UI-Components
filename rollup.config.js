@@ -1,3 +1,4 @@
+import svgr from '@svgr/rollup';
 import path from 'path';
 import postcssUrl from 'postcss-url';
 import alias from 'rollup-plugin-alias';
@@ -5,8 +6,9 @@ import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
+import url from 'rollup-plugin-url';
 
-export default {
+const defaultConfig = {
   external: [
     'chart.js',
     'date-input-polyfill',
@@ -16,23 +18,25 @@ export default {
     'react-dom',
     'react-chartjs-2',
     'react-slick',
+    'rebass',
     'slick-carousel',
     'styled-components',
     'time-input-polyfill',
   ],
-  input: 'src/index.js',
   output: {
-    dir: 'build',
     format: 'cjs',
   },
   plugins: [
     alias({
+      rebass: path.resolve(process.cwd(), 'node_modules', 'rebass'),
       'styled-components': path.resolve(
         process.cwd(),
         'node_modules',
         'styled-components',
       ),
     }),
+    url(),
+    svgr(),
     babel({
       exclude: 'node_modules/**',
       presets: ['@babel/preset-env', '@babel/preset-react'],
@@ -41,6 +45,25 @@ export default {
     postcss({
       plugins: [postcssUrl({ url: 'inline' })],
     }),
-    commonjs({ ignore: ['node_modules/styled-components/**'] }),
+    commonjs(),
   ],
 };
+
+export default [
+  {
+    ...defaultConfig,
+    input: 'src/index.js',
+    output: {
+      ...defaultConfig.output,
+      dir: 'build',
+    },
+  },
+  {
+    ...defaultConfig,
+    input: 'src/prev/index.js',
+    output: {
+      ...defaultConfig.output,
+      dir: 'prev',
+    },
+  },
+];

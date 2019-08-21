@@ -43,9 +43,11 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.2",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-postcss": "^2.0.3"
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-url": "^2.2.2"
   },
   "dependencies": {
+    "@svgr/rollup": "^4.3.2",
     "chart.js": "^2.8.0",
     "date-input-polyfill": "^2.14.0",
     "polished": "^3.4.1",
