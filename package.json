@@ -17,7 +17,8 @@
     "build": "rollup --config",
     "deploy": "storybook-to-ghpages",
     "dev": "rollup --config --watch",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "storybook:build": "build-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
