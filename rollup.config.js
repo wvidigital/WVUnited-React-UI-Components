@@ -58,7 +58,7 @@ export default [
       dir: 'build',
     },
   },
-  // This is temporary and to be removed once all previous components has been updated
+  // This is temporary and to be removed once all previous components have been updated
   // https://github.com/wvidigital/WVUnited-React-UI-Components/issues/15
   {
     ...defaultConfig,
