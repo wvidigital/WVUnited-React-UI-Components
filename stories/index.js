@@ -1,24 +1,14 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 // Stories.
-import { storiesText } from '../src/components/Text/stories';
-import { storiesButton } from '../src/components/Button/stories';
-import { storiesIcon } from '../src/components/Icon/stories';
-import { storiesFormFields } from '../src/components/Form/Fields/stories';
-import { storiesFormGrid } from '../src/components/Form/FormGrid/stories';
-import { storiesItemBox } from '../src/components/ItemBox/stories';
-import { storiesGrid } from '../src/components/Grid/stories';
-import { storiesCharts } from '../src/components/Charts/stories';
-
-storiesText;
-storiesButton;
-storiesIcon;
-storiesFormFields;
-storiesFormGrid;
-storiesItemBox;
-storiesGrid;
-storiesCharts;
+import '../src/prev/Text/stories';
+import '../src/prev/Button/stories';
+import '../src/prev/Icon/stories';
+import '../src/prev/Form/Fields/stories';
+import '../src/prev/Form/FormGrid/stories';
+import '../src/prev/ItemBox/stories';
+import '../src/prev/Grid/stories';
+import '../src/components/Doughnut/stories';
 
 storiesOf('Information', module).add('Current versions', () => (
   <div>
