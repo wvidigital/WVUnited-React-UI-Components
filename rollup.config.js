@@ -7,13 +7,15 @@ export default {
   external: [
     'chart.js',
     'date-input-polyfill',
+    'polished',
+    'prop-types',
     'react',
     'react-dom',
-    'prop-types',
     'react-chartjs-2',
     'react-slick',
+    'slick-carousel',
     'styled-components',
-    'time-input-polyfill/auto',
+    'time-input-polyfill',
   ],
   input: 'src/index.js',
   output: {
@@ -21,11 +23,11 @@ export default {
     format: 'cjs',
   },
   plugins: [
-    resolve(),
     babel({
       exclude: 'node_modules/**',
       presets: ['@babel/preset-env', '@babel/preset-react'],
     }),
+    resolve(),
     postcss({
       plugins: [postcssUrl({ url: 'inline' })],
     }),
