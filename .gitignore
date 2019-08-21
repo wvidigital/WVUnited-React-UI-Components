@@ -1,6 +1,2 @@
-# Don't track content of these folders
-node_modules/
-# User-specific stuff:
-.idea
-src/dist
-/package-lock.json
+build
+node_modules

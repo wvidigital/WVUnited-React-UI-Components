@@ -2,7 +2,7 @@
   "name": "@worldvision/ui-components",
   "version": "0.0.17",
   "description": "React component library for WVI",
-  "main": "src/dist/ui.js",
+  "main": "build",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wvidigital/WVUnited-React-UI-Components.git"
@@ -14,9 +14,10 @@
   },
   "homepage": "https://github.com/wvidigital/WVUnited-React-UI-Components#readme",
   "scripts": {
-    "build": "webpack --config src/ui.config.js --mode=production",
-    "storybook": "start-storybook -p 9001 -c .storybook",
-    "deploy": "storybook-to-ghpages"
+    "build": "webpack",
+    "deploy": "storybook-to-ghpages",
+    "dev": "webpack --watch",
+    "storybook": "start-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
