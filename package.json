@@ -33,6 +33,7 @@
     "@storybook/addons": "^5.1.11",
     "@storybook/react": "^5.1.11",
     "@storybook/storybook-deployer": "^2.8.1",
+    "@svgr/rollup": "^4.3.2",
     "babel-loader": "^8.0.6",
     "husky": "^3.0.4",
     "node-sass": "^4.11.0",
@@ -50,7 +51,6 @@
     "styled-components": "^4.3.2"
   },
   "dependencies": {
-    "@svgr/rollup": "^4.3.2",
     "chart.js": "^2.8.0",
     "date-input-polyfill": "^2.14.0",
     "polished": "^3.4.1",
