@@ -22,9 +22,9 @@ export {
 export {
   default as FieldCheckbox,
 } from './components/Form/Fields/FieldCheckbox';
-// export {
-//   default as FieldTextArea,
-// } from './components/Form/Fields/FieldTextArea';
+export {
+  default as FieldTextArea,
+} from './components/Form/Fields/FieldTextArea';
 // export {
 //   default as FieldFileUpload,
 // } from './components/Form/Fields/FieldFileUpload';
