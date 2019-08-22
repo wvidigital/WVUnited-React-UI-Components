@@ -57,9 +57,7 @@ function FormNavigation(props) {
 
                   ${props.activeStep == stepNumber &&
                     `
-                                    background: ${
-                                      globalStyles.colors.textColor
-                                    };
+                                    background: ${globalStyles.colors.textColor};
                                     color: #fff;
                                 `}
                 }

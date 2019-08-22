@@ -1,2 +1,4 @@
 build
+/prev
 node_modules
+storybook-static
