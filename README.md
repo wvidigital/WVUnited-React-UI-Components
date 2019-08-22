@@ -84,7 +84,7 @@ This repository contains a foundational [_theme_](blob/master/src/theme.js) sche
 - 🖥 Typography
 - ✨ And more
 
-Our current theme can be found [here]([_theme_](blob/master/src/theme.js).
+Our current theme can be found [here](blob/master/src/theme.js).
 
 These constrains are based on design principles which allows us to keep our design consistent across components.
 
