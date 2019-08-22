@@ -15,7 +15,7 @@ const LoadingIndicator = styled(Card)`
   align-items: center;
   background: ${p => p.theme.colors.gray[0]};
   display: flex;
-  flex: 1;
+  flex: 1 0 auto;
   height: ${p =>
     p.height
       ? typeof p.height === 'string'
