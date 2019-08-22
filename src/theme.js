@@ -2,7 +2,7 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 
 export const breakpoints = {
-  wide: 1200,
+  wide: 1140,
   desktop: 1024,
   tablet: 768,
 };
