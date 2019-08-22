@@ -77,19 +77,19 @@ The deployed storybook will be available under [https://wvidigital.github.io/WVU
 
 ### Theme
 
-This repository contains a foundational [_theme_](blob/master/src/theme.js) scheme of:
+This repository contains a foundational [_theme_](src/theme.js) scheme of:
 
 - 🎨 A palette of colors
 - 🚀 A scale of spaces
 - 🖥 Typography
 - ✨ And more
 
-Our current theme can be found [here](blob/master/src/theme.js).
+Our current theme can be found [here](src/theme.js).
 
 These constrains are based on design principles which allows us to keep our design consistent across components.
 
 ### Components
 
-Full list of components [here](tree/master/src/components).
+Full list of components [here](src/components).
 
-List of components to be refactored [here](tree/master/src/prev).
+List of components to be refactored [here](src/prev).
