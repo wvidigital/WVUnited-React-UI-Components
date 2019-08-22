@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "React component library for WVI",
   "main": "build",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wvidigital/WVUnited-React-UI-Components.git"
-  },
+  "files": [
+    "build",
+    "prev"
+  ],
+  "repository": "wvidigital/WVUnited-React-UI-Components",
   "author": "Rossi Ivanova",
   "license": "MIT",
   "bugs": {
