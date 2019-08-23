@@ -41,7 +41,7 @@
     "postcss-url": "^8.0.0",
     "prettier": "1.18.2",
     "pretty-quick": "^1.11.1",
-    "rebass": "^3.1.2",
+    "rebass": "^4.0.5",
     "rollup": "^1.19.4",
     "rollup-plugin-alias": "^1.5.2",
     "rollup-plugin-babel": "^4.3.3",
