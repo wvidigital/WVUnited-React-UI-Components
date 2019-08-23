@@ -1,6 +1,6 @@
 {
   "name": "@worldvision/ui-components",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React component library for WVI",
   "main": "build",
   "files": [
