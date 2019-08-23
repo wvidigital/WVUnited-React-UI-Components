@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button as RawButton } from 'rebass';
+import { Button as RawButton } from 'rebass/styled-components';
 import styled from 'styled-components';
 
 const Button = styled(RawButton)`
@@ -14,7 +14,7 @@ const Button = styled(RawButton)`
 
 const IconButton = ({ children, icon, ...props }) => {
   return (
-    <Button border="none" px={0} py={0} {...props}>
+    <Button sx={{ border: 'none', px: 0, py: 0 }} {...props}>
       {icon}
       {children}
     </Button>

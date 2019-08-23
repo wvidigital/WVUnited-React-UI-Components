@@ -1,5 +1,5 @@
 import { rgba } from 'polished';
-import { Card } from 'rebass';
+import { Card } from 'rebass/styled-components';
 import styled, { keyframes } from 'styled-components';
 
 const shimmer = keyframes`

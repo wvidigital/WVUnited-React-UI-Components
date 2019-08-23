@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link as RawLink } from 'rebass';
+import { Link as RawLink } from 'rebass/styled-components';
 
-const Link = props => <RawLink color="link" {...props} />;
+const Link = props => <RawLink sx={{ color: 'link' }} {...props} />;
 
 export default Link;
