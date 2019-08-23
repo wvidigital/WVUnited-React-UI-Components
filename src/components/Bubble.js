@@ -1,16 +1,18 @@
 import React from 'react';
-import { Text } from 'rebass';
+import { Text } from 'rebass/styled-components';
 import styled from 'styled-components';
 
 const Bubble = styled(props => (
   <Text
-    bg="green.1"
-    color="green.0"
-    fontFamily="sans"
-    fontSize={1}
-    lineHeight="body"
-    px={[3, 3, 4]}
-    py={[2, 2, 3]}
+    sx={{
+      bg: 'green.1',
+      color: 'green.0',
+      fontFamily: 'sans',
+      fontSize: 1,
+      lineHeight: 'body',
+      px: [3, 3, 4],
+      py: [2, 2, 3],
+    }}
     {...props}
   />
 ))`

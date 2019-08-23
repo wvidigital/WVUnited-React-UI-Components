@@ -19,6 +19,7 @@ const defaultConfig = {
     'react-chartjs-2',
     'react-slick',
     'rebass',
+    'rebass/styled-components',
     'slick-carousel',
     'styled-components',
     'time-input-polyfill',

@@ -1,15 +1,19 @@
 import React from 'react';
 import { darken } from 'polished';
-import { Button as RawButton } from 'rebass';
+import { Button as RawButton } from 'rebass/styled-components';
 import styled from 'styled-components';
 
 const Button = styled(({ children, icon: Icon, ...props }) => (
   <RawButton
-    bg="buttonBg"
-    borderRadius={1}
-    color="buttonText"
-    px={3}
-    py={3}
+    sx={{
+      bg: 'buttonBg',
+      borderRadius: 1,
+      color: 'buttonText',
+      fontFamily: 'sans',
+      fontWeight: 'bold',
+      px: 3,
+      py: 3,
+    }}
     type="button"
     {...props}
   >

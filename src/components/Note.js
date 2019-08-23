@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'rebass';
+import { Text } from 'rebass/styled-components';
 import styled from 'styled-components';
 
 const Note = styled(props => (

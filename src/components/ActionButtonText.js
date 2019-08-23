@@ -1,18 +1,20 @@
 import React from 'react';
-import { Text } from 'rebass';
+import { Text } from 'rebass/styled-components';
 import styled from 'styled-components';
 import ActionButton from './ActionButton';
 
 const ActionButtonText = styled(props => (
   <Text
     as="span"
-    fontFamily="sans"
-    fontSize={[1, 1, 2]}
-    fontWeight="bold"
-    lineHeight="body"
-    mt={[2, 2, 0]}
-    p={[0, 0, 3]}
-    textAlign="center"
+    sx={{
+      fontFamily: 'sans',
+      fontSize: [1, 1, 2],
+      fontWeight: 'bold',
+      lineHeight: 'body',
+      mt: [2, 2, 0],
+      p: [0, 0, 3],
+      textAlign: 'center',
+    }}
     {...props}
   />
 ))`

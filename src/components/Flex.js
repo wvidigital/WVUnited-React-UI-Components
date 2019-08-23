@@ -1,3 +1,3 @@
-import { Flex } from 'rebass';
+import { Flex } from 'rebass/styled-components';
 
 export default Flex;
