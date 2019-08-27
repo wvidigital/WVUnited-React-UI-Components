@@ -2,11 +2,7 @@ import React from 'react';
 import { Heading as RawHeading } from 'rebass/styled-components';
 
 const Heading = props => (
-  <RawHeading
-    fontFamily="sans"
-    sx={{ color: 'text', ...props.sx }}
-    {...props}
-  />
+  <RawHeading color="text" fontFamily="sans" {...props} />
 );
 
 export const H1 = props => (
