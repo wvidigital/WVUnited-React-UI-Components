@@ -1,5 +1,6 @@
 // Default theme
 export { breakpoints, default as theme } from './theme';
+export { default as googleMapsStyles } from './theme/googleMaps';
 
 // UI components
 export { default as ActionButton } from './components/ActionButton';
