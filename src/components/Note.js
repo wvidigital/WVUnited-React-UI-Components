@@ -24,7 +24,6 @@ const Note = styled(props => (
   overflow: hidden;
   text-align: center;
   text-overflow: ellipsis;
-  text-transform: capitalize;
   white-space: nowrap;
 `;
 

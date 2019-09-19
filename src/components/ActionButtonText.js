@@ -18,8 +18,6 @@ const ActionButtonText = styled(props => (
     {...props}
   />
 ))`
-  text-transform: capitalize;
-
   ${p => p.theme.media.desktop`
     background: ${p => p.theme.colors[p.color][0]};
     color: ${p => p.theme.colors.buttonText};
