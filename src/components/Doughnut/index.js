@@ -27,16 +27,6 @@ const Doughnut = props => {
 };
 
 Doughnut.defaultProps = {
-  values: [31, 30, 15, 10, 7, 4, 3],
-  labels: [
-    'Livelihoods',
-    'Health',
-    'Education',
-    'Community empowerment',
-    'Nutrition',
-    'Protection',
-    'Emergency response',
-  ],
   colors: [
     '#10a8cc',
     '#e96107',
@@ -59,8 +49,8 @@ Doughnut.defaultProps = {
 };
 
 Doughnut.propTypes = {
-  values: PropTypes.array,
-  labels: PropTypes.array,
+  values: PropTypes.array.isRequired,
+  labels: PropTypes.array.isRequired,
   colors: PropTypes.array,
   label: PropTypes.string,
   borderWidth: PropTypes.number,
