@@ -7,8 +7,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import globalStyles from '../../../styles/globalStyles';
-import { textStyles } from '../../../styles/theme';
+import globalStyles from '../../styles/globalStyles';
+import { textStyles } from '../../styles/theme';
 
 import FieldSelect from '../Fields/FieldSelect';
 import FieldText from '../Fields/FieldText';

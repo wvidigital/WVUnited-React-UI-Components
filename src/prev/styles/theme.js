@@ -2,7 +2,7 @@ import fonts from '../../fonts/lato/style.css';
 import iconStyles from '../../fonts/mwv_icons/style.css';
 import globalStyles from './globalStyles';
 
-export const textStyles = `  
+export const textStyles = `
   font-family: 'Lato', Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -14,13 +14,13 @@ export const errorStyles = `
     color: #ff6b00;
     font-size: 14px;
   }
-  
+
   &.form__item--has-errors input,
   &.form__item--has-errors select,
   &.form__item--has-errors textarea {
     border-color: #f37020 !important;
   }
-        
+
   &.form__item--required-true .label__text:after {
     content: "*";
     display: inline-block;
@@ -38,10 +38,10 @@ export const iconContentStyles = `
     line-height: 1.5;
     font-weight: 300;
   }
-  
+
   .mwv-icon-content {
     display: flex;
-  
+
     &:before {
      display: inline-block;
      font-family: 'mwv_icons';
@@ -79,32 +79,32 @@ export const iconContentStyles = `
     &-founded:before {content: 'D';}
     &-seat:before {content: 'r';}
     &-employees:before {content: 'n';}
-    &-countries:before {content: 'p';}  
-    
+    &-countries:before {content: 'p';}
+
     // Family fields.
     &-female:before {content: 'J';}
     &-male:before,
     &-godchildren:before {content: 'S';}
     &-projects:before {content: 'T';}
-    
+
     // Social.
     &-facebook:before {content: 'I';}
     &-instagram:before {content: 'R';}
     &-twitter:before {content: 'e';}
     &-youtube:before {content: 'k';}
-    
+
     &-search:before {content: 'Z';}
     &-profile:before {content: 'f';}
-    
+
     // Known.
     &-filter:before {content: 'K';}
     &-info:before {content: 'R';}
     &-heart:before {content: 'O';} // i have this above.
-    
+
     &-marker:before {content: 'V';} // full location.
-    &-watbubble:before {content: 'E';}    
-    
-    // Feed post icons.    
+    &-watbubble:before {content: 'E';}
+
+    // Feed post icons.
     &-post {
         &-text:before {content: 'B';}
         &-image:before {content: 's';}
@@ -122,7 +122,7 @@ export const iconContentStyles = `
     &-childid:before {content: 'u';}
     &-arrow-left:before {content: 'v';}
     &-arrow-right:before {content: 'w';}
-    
+
     // Position adjustment for arrows.
     &-arrow-left:before,
     &-arrow-right:before {
@@ -131,6 +131,6 @@ export const iconContentStyles = `
     }
     &-arrow-right:before {
       left: 4px;
-    }    
+    }
   }
 `;

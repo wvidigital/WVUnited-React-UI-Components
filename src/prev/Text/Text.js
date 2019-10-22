@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { textStyles } from '../../styles/theme';
+import { textStyles } from '../styles/theme';
 
 export default function Text(props) {
   // Create a Text component that will render a <p> element with styles.

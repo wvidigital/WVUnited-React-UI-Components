@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import globalStyles from '../../../../styles/globalStyles';
-import { textStyles } from '../../../../styles/theme';
+import globalStyles from '../../../styles/globalStyles';
+import { textStyles } from '../../../styles/theme';
 
 export default function FieldRadio(props) {
   /**
@@ -16,11 +16,11 @@ export default function FieldRadio(props) {
       const RadioOption = styled.div`
         margin: 0 15px;
         padding: 12px 15px;
-        
+
         ${props.settings.border !== '' &&
           `
           border-bottom: ${props.settings.border};
-        `}       
+        `}
           // Payment methods.
           ${option.description !== undefined &&
             option.icon !== undefined &&
@@ -44,29 +44,29 @@ export default function FieldRadio(props) {
             `
             font-size: 20px;
           `}
-              
+
           p {
             ${textStyles};
             line-height: 1;
           }
-          
+
           img {
             display: block;
             width: 66px;
-            
+
             // Desktop styles
             position: absolute;
             top: 0;
             right: 0;
           }
-  
+
           // Align labels only when no description & image are provided.
           ${option.description === undefined &&
             option.image === undefined &&
             `
             line-height: 42px;
           `}
-  
+
           input {
             position: absolute;
             height: 100%;
@@ -78,7 +78,7 @@ export default function FieldRadio(props) {
             cursor: pointer;
           }
 
-         
+
         }
       `;
 

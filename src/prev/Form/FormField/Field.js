@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import globalStyles from '../../../styles/globalStyles';
-import { textStyles } from '../../../styles/theme';
+import globalStyles from '../../styles/globalStyles';
+import { textStyles } from '../../styles/theme';
 
 export const Field = styled.div`
   display: inline-block;

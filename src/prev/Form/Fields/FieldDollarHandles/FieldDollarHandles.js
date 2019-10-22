@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import globalStyles from '../../../../styles/globalStyles';
-import { textStyles } from '../../../../styles/theme';
+import globalStyles from '../../../styles/globalStyles';
+import { textStyles } from '../../../styles/theme';
 
 export default function FieldDollarHandles(props) {
   /**

@@ -10,7 +10,7 @@ import Image from '../Image';
 import Text from '../Text';
 
 import FormGrid from '../Form/FormGrid';
-import globalStyles from '../../styles/globalStyles';
+import globalStyles from '../styles/globalStyles';
 
 export default class ItemBox extends React.Component {
   constructor(props) {
