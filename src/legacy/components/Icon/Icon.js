@@ -28,16 +28,16 @@ export default function Icon(props) {
     flex-direction: ${props.text && props.inline ? 'row' : 'column'};
     align-items: center;
     justify-content: center;
-    
+
     ${iconContentStyles};
     .mwv-icon-content {
       margin-${props.text && props.inline ? 'right' : 'bottom'}: 6px;
-  
+
       &:before {
        color: ${props.color};
      }
    }
-  
+
   // Icon sizes based on props.
   &.small {
     .mwv-icon-label,
@@ -45,26 +45,26 @@ export default function Icon(props) {
       font-size: 16px;
     }
   }
-  
+
   &.normal .mwv-icon-content:before {
     font-size: 22px;
   }
   &.big .mwv-icon-content:before {
     font-size: 32px;
   }
-  
+
   &.with-background .mwv-icon-content {
     display: flex;
     width: 36px;
     height: 36px;
     align-items: center;
     justify-content: center;
-    
+
     border-radius: 50%;
     background-color: ${props.background};
     border: ${props.border ? `1px solid ${props.color}` : 'none'};
   }
-  
+
   &.with-background.normal .mwv-icon-content {
     width: 44px;
     height: 44px;
@@ -72,10 +72,10 @@ export default function Icon(props) {
   &.with-background.big .mwv-icon-content {
     width: 60px;
     height: 60px;
-    border: ${props.border ? `3px solid ${props.color}` : 'none'};    
+    border: ${props.border ? `3px solid ${props.color}` : 'none'};
   }
 }
-  
+
 `;
 
   return (

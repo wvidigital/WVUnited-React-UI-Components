@@ -51,12 +51,12 @@ export default function Sidebar(props) {
     max-width: 300px;
     padding: 34px 16px 40px;
     background: ${globalStyles.colors.formSidebarBackground}
-    
+
     h3 {
       margin-top: 0;
       color: ${globalStyles.colors.textColor}
     }
-    
+
     p {
       color: ${globalStyles.colors.textColor}
       text-align: center;
@@ -64,7 +64,7 @@ export default function Sidebar(props) {
         font-weight: 400;
       }
     }
-    
+
     img {
       width: 100%;
     }

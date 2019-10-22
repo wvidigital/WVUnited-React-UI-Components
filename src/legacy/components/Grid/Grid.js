@@ -73,17 +73,17 @@ export default function Grid(props) {
   let rightArrowPositionPx = props.width / 2 - 44;
 
   // Create a Grid component that will render a <div> element with styles.
-  const Grid = styled.div`  
+  const Grid = styled.div`
   display: ${props.isSlider} ? 'flex' : 'block';
   flex-direction: ${props.direction};
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  
+
   margin: 0 0 8px;
   background: ${props.background};
   color: ${props.color};
   ${textStyles};
-  
+
   // Styles for slick.
   .slick-list {
     position: relative;
@@ -92,11 +92,11 @@ export default function Grid(props) {
     width: ${props.width}px;
     // margin: 0 auto;
     padding: 0 !important;
-    
+
     .slick-track {
       left: 50px; // equal to centerPadding setting.
     }
-    
+
     // Do we need to pass the breakpoint as prop?
     @media all and (max-width: 1440px) {
       width: 100%;
@@ -106,22 +106,22 @@ export default function Grid(props) {
       margin: 0 20px 20px;
     }
   }
-  
+
   .slick-prev,
   .slick-next {
     left: calc(50% - ${props.width / 2}px);
     width: 44px;
     height: 100%;
     z-index: 2;
-    
+
     color: transparent;
     outline: none;
     background: transparent;
-    
+
     @media all and (max-width: 1440px) {
       left: 0;
     }
-  
+
     &:before {
       position: absolute;
       display: block;
@@ -133,38 +133,38 @@ export default function Grid(props) {
         props.background
       } 100%);
     }
-    
+
     .mwv-icon {
       position: relative;
       top: 50%;
       margin-top:-30px;
-      
+
       @media all and (max-width: 1440px) {
         display: none;
       }
 
     }
   }
-  
+
   .slick-prev {
     .mwv-icon {
       left: -100px;
     }
   }
-  
+
   .slick-next {
     left: calc(50% + ${rightArrowPositionPx}px);
-    
+
     @media all and (max-width: 1440px) {
       left: calc(100% - 44px);
     }
-    
-    &:before {      
+
+    &:before {
       background-image: linear-gradient(to right, transparent, ${
         props.background
       } 100%);
     }
-        
+
     .mwv-icon {
       right: -100px;
     }

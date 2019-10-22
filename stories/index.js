@@ -1,13 +1,13 @@
 import { storiesOf } from '@storybook/react';
 
 // Stories.
-import '../src/prev/Text/stories';
-import '../src/prev/Button/stories';
-import '../src/prev/Icon/stories';
-import '../src/prev/Form/Fields/stories';
-import '../src/prev/Form/FormGrid/stories';
-import '../src/prev/ItemBox/stories';
-import '../src/prev/Grid/stories';
+import '../src/legacy/components/Text/stories';
+import '../src/legacy/components/Button/stories';
+import '../src/legacy/components/Icon/stories';
+import '../src/legacy/components/Form/Fields/stories';
+import '../src/legacy/components/Form/FormGrid/stories';
+import '../src/legacy/components/ItemBox/stories';
+import '../src/legacy/components/Grid/stories';
 import '../src/components/Doughnut/stories';
 
 storiesOf('Information', module).add('Current versions', () => (
