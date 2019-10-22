@@ -92,4 +92,4 @@ These constrains are based on design principles which allows us to keep our desi
 
 Full list of components [here](src/components).
 
-List of components to be refactored [here](src/prev).
+List of legacy components [here](src/legacy).

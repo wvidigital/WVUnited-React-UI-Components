@@ -5,7 +5,7 @@
   "main": "build",
   "files": [
     "build",
-    "prev"
+    "legacy"
   ],
   "repository": "wvidigital/WVUnited-React-UI-Components",
   "author": "Rossi Ivanova",

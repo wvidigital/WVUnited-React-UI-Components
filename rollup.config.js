@@ -59,14 +59,15 @@ export default [
       dir: 'build',
     },
   },
-  // This is temporary and to be removed once all previous components have been updated
+  // This is temporary and to be removed once all previous components have been
+  // migrated into the new components.
   // https://github.com/wvidigital/WVUnited-React-UI-Components/issues/15
   {
     ...defaultConfig,
-    input: 'src/prev/index.js',
+    input: 'src/legacy/index.js',
     output: {
       ...defaultConfig.output,
-      dir: 'prev',
+      dir: 'legacy',
     },
   },
 ];
