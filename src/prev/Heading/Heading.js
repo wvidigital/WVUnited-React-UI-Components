@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// Need to add this to properly load the fonts.
-import fonts from '../../../fonts/gill-sans-suomi-hand-script/style.css';
 
 // Render the proper HTML tag depending on the props.
 function renderHeading(props) {

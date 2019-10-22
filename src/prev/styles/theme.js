@@ -1,7 +1,3 @@
-import fonts from '../../fonts/lato/style.css';
-import iconStyles from '../../fonts/mwv_icons/style.css';
-import globalStyles from './globalStyles';
-
 export const textStyles = `
   font-family: 'Lato', Arial, sans-serif;
   font-size: 16px;

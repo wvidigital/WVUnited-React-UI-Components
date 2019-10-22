@@ -1,3 +1,7 @@
+import '../fonts/gill-sans-suomi-hand-script/style.css';
+import '../fonts/lato/style.css';
+import '../fonts/mwv_icons/style.css';
+
 const globalStyles = {
   colors: {
     textColor: '#363636',

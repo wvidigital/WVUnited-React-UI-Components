@@ -13,7 +13,6 @@ import { textStyles } from '../../styles/theme';
 import ActionButton from '../../Button/ActionButton';
 import TextLink from '../../Button/TextLink';
 import Heading from '../../Heading/Heading';
-import fonts from '../../../../fonts/gill-sans-suomi-hand-script/style.css';
 
 function FormNavigation(props) {
   const FormNavigation = styled.div`
