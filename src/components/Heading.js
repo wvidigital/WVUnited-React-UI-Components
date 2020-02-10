@@ -6,10 +6,18 @@ const Heading = props => (
 );
 
 export const H1 = props => (
-  <Heading as="h1" sx={{ fontSize: 5, ...props.sx }} {...props} />
+  <Heading
+    as="h1"
+    sx={{ fontSize: 5, hyphens: 'auto', ...props.sx }}
+    {...props}
+  />
 );
 export const H2 = props => (
-  <Heading as="h2" sx={{ fontSize: 4, ...props.sx }} {...props} />
+  <Heading
+    as="h2"
+    sx={{ fontSize: 4, hyphens: 'auto', ...props.sx }}
+    {...props}
+  />
 );
 export const H3 = props => (
   <Heading as="h3" sx={{ fontSize: 3, ...props.sx }} {...props} />
