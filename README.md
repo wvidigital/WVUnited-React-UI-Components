@@ -1,3 +1,7 @@
+## DEPRECATED
+
+Contents of this repository have been moved to WVUnited React App (private repo).
+
 # WorldVision UI components
 
 [https://wvidigital.github.io/WVUnited-React-UI-Components](https://wvidigital.github.io/WVUnited-React-UI-Components)
